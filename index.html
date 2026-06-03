@@ -199,7 +199,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.5);}.sm{opacity:.7}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> — Solo lectura</span></div><div class="sm">03/06/2026 05:30 p. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">03/06/2026 05:35 p. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -3283,6 +3283,222 @@ function importarVentasExcel(input){
 
 
 let VENTAS_ANAL=[{"fecha":"2025-11-11","proyecto":"VILELA 3399","uf":"501","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":525000,"cochera":"C5","val_cochera":25000,"val_total":550000,"m2_precio":3739,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":45,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"PAULA"},{"fecha":"2025-11-15","proyecto":"QUESADA 3050","uf":"201","tipo":"4 amb","sup":95.14,"sup_semi":10.44,"sup_pond":105.58,"val_depto":368000,"cochera":"C 24","val_cochera":25000,"val_total":393000,"m2_precio":3486,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"NATALIA"},{"fecha":"2025-12-01","proyecto":"QUESADA 3050","uf":"001.","tipo":"3 amb","sup":69.22,"sup_semi":27.29,"sup_pond":96.51,"val_depto":280000,"cochera":"C15","val_cochera":25000,"val_total":305000,"m2_precio":2901,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":35,"sexo":"MUJER","estado_civil":"SOLTERA","estado":"VENDIDO","propietario":"ANTONELLA"},{"fecha":"2026-02-05","proyecto":"VILELA 3399","uf":"402","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":365000,"cochera":"C13","val_cochera":25000,"val_total":390000,"m2_precio":3446,"cotello":"NO","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"CLAUDIO VANZI"},{"fecha":"2026-02-14","proyecto":"QUESADA 3050","uf":"402","tipo":"4 amb","sup":97.54,"sup_semi":11.6,"sup_pond":109.14,"val_depto":385000,"cochera":"C15","val_cochera":25000,"val_total":410000,"m2_precio":3528,"cotello":"NO","canal":"ALEJANDRO","edad":70,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":""},{"fecha":"2026-02-14","proyecto":"QUESADA II","uf":"403","tipo":"3 amb","sup":88.76,"sup_semi":30.9,"sup_pond":119.66,"val_depto":315400,"cochera":"c22","val_cochera":21600,"val_total":337000,"m2_precio":2636,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"","estado":"VENDIDO","propietario":"LUPE"},{"fecha":"2026-02-14","proyecto":"QUESADA II","uf":"406","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":229800,"cochera":"c23","val_cochera":21600,"val_total":251400,"m2_precio":2573,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"","estado":"VENDIDO","propietario":"LUPE"},{"fecha":"2026-02-14","proyecto":"QUESADA II","uf":"601","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":356400,"cochera":"c43","val_cochera":21600,"val_total":378000,"m2_precio":2767,"cotello":"SI","canal":"INVERSOR","edad":60,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"WELSH"},{"fecha":"2026-02-14","proyecto":"QUESADA II","uf":"206","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":230000,"cochera":"","val_cochera":0,"val_total":230000,"m2_precio":2576,"cotello":"SI","canal":"OBRA","edad":null,"sexo":"HOMBRE","estado_civil":"","estado":"VENDIDO","propietario":"Cortes y sistemas"},{"fecha":"2026-02-26","proyecto":"QUESADA II","uf":"504","tipo":"3 amb","sup":94.67,"sup_semi":30.51,"sup_pond":125.18,"val_depto":338400,"cochera":"c44","val_cochera":21600,"val_total":360000,"m2_precio":2703,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"FEDERICO CARRERA"},{"fecha":"2026-03-02","proyecto":"VILELA 3399","uf":"302","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":375000,"cochera":"C9","val_cochera":25000,"val_total":400000,"m2_precio":3541,"cotello":"NO","canal":"ES CLIENTE","edad":60,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"ALICIA JAWERBAUM"},{"fecha":"2026-03-04","proyecto":"VILELA 3399","uf":"301","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":500000,"cochera":"C11","val_cochera":25000,"val_total":525000,"m2_precio":3561,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"LUISA FABIANO"},{"fecha":"2026-03-12","proyecto":"QUESADA II","uf":"401","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":305000,"cochera":"c--","val_cochera":21600,"val_total":326600,"m2_precio":2368,"cotello":"SI","canal":"INVERSOR","edad":35,"sexo":"HOMBRE","estado_civil":"","estado":"VENDIDO","propietario":"SANTIAGO ROQUE"},{"fecha":"2026-03-12","proyecto":"QUESADA II","uf":"804","tipo":"2 amb","sup":51.84,"sup_semi":null,"sup_pond":61.99,"val_depto":161400,"cochera":"c--","val_cochera":21600,"val_total":183000,"m2_precio":2604,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"","estado":"VENDIDO","propietario":"LAURA ANDORO"},{"fecha":"2026-03-12","proyecto":"QUESADA II","uf":"606","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":246400,"cochera":"c--","val_cochera":21600,"val_total":268000,"m2_precio":2759,"cotello":"SI","canal":"INVERSOR","edad":65,"sexo":"","estado_civil":"","estado":"VENDIDO","propietario":"MIGUEL ARMANDO"},{"fecha":"2026-03-30","proyecto":"QUESADA II","uf":"305","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":null,"val_depto":160000,"cochera":"","val_cochera":0,"val_total":160000,"m2_precio":2579,"cotello":"SI","canal":"ZONAPROP","edad":22,"sexo":"HOMBRE","estado_civil":"SOLTERO","estado":"VENDIDO","propietario":"MATIAS ESOUKOURIAN"},{"fecha":"2026-04-14","proyecto":"VILELA 3399","uf":"401","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":520000,"cochera":"C5","val_cochera":25000,"val_total":545000,"m2_precio":3704,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"DEBORA RABINOVICH"},{"fecha":"2026-04-14","proyecto":"QUESADA II","uf":"701","tipo":"4 amb","sup":152.9,"sup_semi":42.58,"sup_pond":195.48,"val_depto":570500,"cochera":"C10yC11","val_cochera":50000,"val_total":620500,"m2_precio":2918,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"HOMBRE","estado_civil":"DIVORCIADO","estado":"VENDIDO","propietario":"LEONARDO ALVAREZ"},{"fecha":"2026-05-05","proyecto":"VILELA 3399","uf":"202","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":345000,"cochera":"C12","val_cochera":25000,"val_total":370000,"m2_precio":3257,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"JOSEFINA KAPLAN"},{"fecha":"2026-05-06","proyecto":"MELIAN  3899","uf":"301","tipo":"3 amb","sup":93.5,"sup_semi":18.87,"sup_pond":112.37,"val_depto":315100,"cochera":"C12","val_cochera":25000,"val_total":340100,"m2_precio":2804,"cotello":"SI","canal":"REFERIDO","edad":55,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"LUIS MARIA COVIELA"},{"fecha":"2026-05-18","proyecto":"MELIAN  3899","uf":"702","tipo":"4 amb","sup":124.7,"sup_semi":56.26,"sup_pond":189.2,"val_depto":645000,"cochera":"C3","val_cochera":25000,"val_total":670000,"m2_precio":3409,"cotello":"SI","canal":"COTELLO","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"FERNANDO PAVE"},{"fecha":"2026-05-28","proyecto":"MELIAN  3899","uf":"401","tipo":"3 amb","sup":93.5,"sup_semi":18.87,"sup_pond":112.37,"val_depto":354100,"cochera":"C13","val_cochera":21600,"val_total":375700,"m2_precio":3151,"cotello":"SI","canal":"COTELLO","edad":50,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"MARIA LESCANO"},{"fecha":"2026-05-28","proyecto":"MELIAN  3899","uf":"503","tipo":"3 amb","sup":75.34,"sup_semi":18.74,"sup_pond":94.08,"val_depto":275200,"cochera":"C12","val_cochera":21600,"val_total":296800,"m2_precio":2925,"cotello":"SI","canal":"COTELLO","edad":50,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"MARIA LESCANO"},{"fecha":"2026-06-05","proyecto":"VILELA 3399","uf":"201","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":495000,"cochera":"C7","val_cochera":25000,"val_total":520000,"m2_precio":3526,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":65,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"SEÑADO","propietario":"PABLO"},{"fecha":"2026-06-08","proyecto":"MELIAN  3899","uf":"302","tipo":"3 amb","sup":139.7,"sup_semi":33.23,"sup_pond":172.93,"val_depto":473000,"cochera":"C12","val_cochera":21600,"val_total":494600,"m2_precio":2735,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":50,"sexo":"HOMBRE","estado_civil":"","estado":"SEÑADO","propietario":"GABRIEL"},{"fecha":"2026-06-08","proyecto":"QUESADA II","uf":"501","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":339900,"cochera":"c--","val_cochera":25600,"val_total":365500,"m2_precio":2639,"cotello":"SI","canal":"COTELLO","edad":35,"sexo":"HOMBRE","estado_civil":"","estado":"SEÑADO","propietario":"MATIAS MENICHELLI"},{"fecha":"2026-06-02","proyecto":"QUESADA II","uf":"303","tipo":"3 amb","sup":88.76,"sup_semi":30.9,"sup_pond":119.66,"val_depto":308000,"cochera":"c--","val_cochera":21600,"val_total":329600,"m2_precio":2574,"cotello":"SI","canal":"REFERIDO","edad":45,"sexo":"HOMBRE","estado_civil":"","estado":"SEÑADO","propietario":"GUIDO"},{"fecha":"2026-06-05","proyecto":"QUESADA II","uf":"605","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":164400,"cochera":"c--","val_cochera":21600,"val_total":186000,"m2_precio":2649,"cotello":"SI","canal":"COTELLO","edad":45,"sexo":"MUJER","estado_civil":"","estado":"SEÑADO","propietario":"MATIAS RUBIO"},{"fecha":"2026-06-05","proyecto":"QUESADA II","uf":"604","tipo":"3 amb","sup":94.67,"sup_semi":30.51,"sup_pond":125.18,"val_depto":355000,"cochera":"c--","val_cochera":21600,"val_total":376600,"m2_precio":2836,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":55,"sexo":"MUJER","estado_civil":"","estado":"SEÑADO","propietario":"LUJAN"},{"fecha":"2026-06-05","proyecto":"QUESADA II","uf":"405","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":170000,"cochera":"c--","val_cochera":0,"val_total":170000,"m2_precio":2740,"cotello":"SI","canal":"INVERSOR","edad":55,"sexo":"MUJER","estado_civil":"","estado":"SEÑADO","propietario":"GABY FISH"}];
+
+// ─── VENTAS ANÁLISIS ─────────────────────────────────────────────────────────
+// ─── VENTAS ANÁLISIS ─────────────────────────────────────────────────────────
+let vaFiltro = '';
+
+function setVaFiltro(p){
+  vaFiltro = p;
+  document.querySelectorAll('.va-btn').forEach(b=>{
+    const on = b.dataset.p === p;
+    b.classList.toggle('active', on);
+    const col = PROY_COLORS[b.dataset.p];
+    b.style.background  = on ? (col||'var(--accent)') : '';
+    b.style.color       = on ? '#0f0f0f' : '';
+    b.style.borderColor = on ? (col||'var(--accent)') : (col||'');
+  });
+  renderVentasAnal();
+}
+
+function renderVentasAnal(){
+  const el = document.getElementById('vental-content');
+  if(!el) return;
+
+  const rows = vaFiltro ? VENTAS_ANAL.filter(v=>v.proyecto===vaFiltro) : VENTAS_ANAL;
+  const proyectos = [...new Set(VENTAS_ANAL.map(v=>v.proyecto))].sort();
+
+  // ── KPIs
+  const n       = rows.length;
+  const total   = rows.reduce((s,v)=>s+(v.val_total||0),0);
+  const avg     = n ? Math.round(total/n) : 0;
+  const avgM2   = (()=>{ const r=rows.filter(v=>v.m2_precio); return r.length?Math.round(r.reduce((s,v)=>s+v.m2_precio,0)/r.length):0; })();
+  const vendidos= rows.filter(v=>v.estado==='VENDIDO').length;
+  const seniados= rows.filter(v=>v.estado==='SEÑADO').length;
+  const edades  = rows.filter(v=>v.edad).map(v=>v.edad);
+  const avgEdad = edades.length ? Math.round(edades.reduce((s,e)=>s+e,0)/edades.length) : 0;
+
+  // ── Por canal
+  const canalCnt = {};
+  rows.forEach(v=>{ if(v.canal) canalCnt[v.canal]=(canalCnt[v.canal]||0)+1; });
+  const canales = Object.entries(canalCnt).sort((a,b)=>b[1]-a[1]);
+  const CC = ['#c8f060','#60d098','#60b4f0','#f0b860','#d098f0','#f06060','#f09060','#80e0c0'];
+
+  // ── Por tipo
+  const tipoCnt = {};
+  rows.forEach(v=>{ if(v.tipo) tipoCnt[v.tipo]=(tipoCnt[v.tipo]||0)+1; });
+
+  // ── Evolución mensual
+  const mesCnt = {};
+  rows.forEach(v=>{
+    const ym = v.fecha.slice(0,7);
+    if(!mesCnt[ym]) mesCnt[ym]={n:0,total:0};
+    mesCnt[ym].n++;
+    mesCnt[ym].total += v.val_total||0;
+  });
+  const mesKeys = Object.keys(mesCnt).sort();
+  const maxMn   = Math.max(...mesKeys.map(m=>mesCnt[m].n), 1);
+  const bW      = mesKeys.length > 0 ? Math.min(48, Math.floor(560/mesKeys.length)) : 40;
+
+  // ── SVG bar chart por mes
+  const svgW = mesKeys.length*(bW+6)+20;
+  const barsSvg = mesKeys.map((m,i)=>{
+    const d = mesCnt[m];
+    const h = Math.max(4, Math.round(d.n/maxMn*60));
+    const x = 10 + i*(bW+6);
+    const y = 72 - h;
+    const lbl = MESES[parseInt(m.split('-')[1])-1]+"'"+m.slice(2,4);
+    return `<rect x="${x}" y="${y}" width="${bW}" height="${h}" fill="#c8f060" opacity="0.85" rx="2"/>
+<text x="${x+bW/2}" y="${y-4}" text-anchor="middle" font-size="10" fill="#c8f060" font-family="monospace">${d.n}</text>
+<text x="${x+bW/2}" y="90" text-anchor="middle" font-size="8" fill="#999" font-family="monospace">${lbl}</text>`;
+  }).join('');
+
+  // ── Render completo
+  el.innerHTML = `
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+  <span style="font-size:12px;color:var(--muted);font-weight:500">Proyecto:</span>
+  <button class="btn btn-sm va-btn${vaFiltro===''?' active':''}" data-p="" onclick="setVaFiltro('')">Todos</button>
+  ${proyectos.map(p=>`<button class="btn btn-sm va-btn${vaFiltro===p?' active':''}" data-p="${p}" onclick="setVaFiltro('${p}')" style="border-color:${PROY_COLORS[p]||'var(--border2)'}">${p}</button>`).join('')}
+  <span style="font-size:11px;color:var(--muted);margin-left:6px">${n} operaciones</span>
+</div>
+
+<div class="metrics-row" style="margin-bottom:24px">
+  <div class="metric-card">
+    <div class="metric-label">Operaciones</div>
+    <div class="metric-val accent">${n}</div>
+    <div class="metric-sub">${vendidos} vendidos · ${seniados} señados</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Valor total</div>
+    <div class="metric-val green">U$S ${fmtN(Math.round(total))}</div>
+    <div class="metric-sub">cartera</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Ticket promedio</div>
+    <div class="metric-val">U$S ${fmtN(avg)}</div>
+    <div class="metric-sub">por operación</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Precio m² prom.</div>
+    <div class="metric-val amber">U$S ${fmtN(avgM2)}</div>
+    <div class="metric-sub">sup. ponderada</div>
+  </div>
+  <div class="metric-card">
+    <div class="metric-label">Edad promedio</div>
+    <div class="metric-val">${avgEdad||'—'}${avgEdad?`<span style="font-size:13px;color:var(--muted)"> años</span>`:''}</div>
+    <div class="metric-sub">compradores</div>
+  </div>
+</div>
+
+<div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;margin-bottom:24px">
+
+  <div class="form-section" style="margin-bottom:0">
+    <div class="form-section-title" style="font-size:12px">Operaciones por mes</div>
+    <svg viewBox="0 0 ${Math.max(svgW,200)} 100" style="width:100%;height:100px;display:block">
+      ${barsSvg}
+    </svg>
+    <div class="tbl-wrap" style="margin-top:10px;max-height:180px;overflow-y:auto">
+      <table><thead><tr>
+        <th>Mes</th>
+        <th style="text-align:right">Ops</th>
+        <th style="text-align:right">Total</th>
+        <th style="text-align:right">Ticket prom.</th>
+      </tr></thead><tbody>
+      ${mesKeys.map(m=>`<tr>
+        <td style="font-weight:500">${ym2label(m)}</td>
+        <td style="font-family:var(--mono);font-size:12px;text-align:right">${mesCnt[m].n}</td>
+        <td class="positive">U$S ${fmtN(Math.round(mesCnt[m].total))}</td>
+        <td style="font-family:var(--mono);font-size:12px;text-align:right;color:var(--muted)">U$S ${fmtN(Math.round(mesCnt[m].total/mesCnt[m].n))}</td>
+      </tr>`).join('')}
+      <tr class="tbl-total">
+        <td>TOTAL</td>
+        <td style="text-align:right">${n}</td>
+        <td class="positive">U$S ${fmtN(Math.round(total))}</td>
+        <td style="text-align:right;color:var(--muted)">U$S ${fmtN(avg)}</td>
+      </tr>
+      </tbody></table>
+    </div>
+  </div>
+
+  <div class="form-section" style="margin-bottom:0">
+    <div class="form-section-title" style="font-size:12px">Por proyecto</div>
+    ${proyectos.map(p=>{
+      const pRows = rows.filter(v=>v.proyecto===p);
+      if(!pRows.length) return '';
+      const col = PROY_COLORS[p]||'#60d098';
+      const ptotal = pRows.reduce((s,v)=>s+(v.val_total||0),0);
+      const pct = total>0 ? Math.round(ptotal/total*100) : 0;
+      return `<div style="margin-bottom:12px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px">
+          <span style="color:${col};font-weight:500">${p}</span>
+          <span style="font-family:var(--mono);color:var(--muted)">${pRows.length} ops</span>
+        </div>
+        <div style="background:var(--surface2);border-radius:3px;height:5px;margin-bottom:2px">
+          <div style="width:${pct}%;height:100%;background:${col};border-radius:3px"></div>
+        </div>
+        <div style="font-size:10px;color:var(--muted)">U$S ${fmtN(Math.round(ptotal))} · ${pct}%</div>
+      </div>`;
+    }).join('')}
+  </div>
+
+  <div class="form-section" style="margin-bottom:0">
+    <div class="form-section-title" style="font-size:12px">Canal de venta</div>
+    ${canales.map(([c,cnt],i)=>{
+      const pct = n?Math.round(cnt/n*100):0;
+      const col = CC[i%CC.length];
+      return `<div style="margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px">
+          <span>${c}</span>
+          <span style="color:${col};font-family:var(--mono)">${cnt} (${pct}%)</span>
+        </div>
+        <div style="background:var(--surface2);border-radius:3px;height:4px">
+          <div style="width:${pct}%;height:100%;background:${col};border-radius:3px"></div>
+        </div>
+      </div>`;
+    }).join('')}
+    <div style="margin-top:14px">
+      <div class="form-section-title" style="font-size:12px;margin-bottom:8px">Tipología</div>
+      ${Object.entries(tipoCnt).sort((a,b)=>b[1]-a[1]).map(([t,cnt],i)=>{
+        const cols=['#60b4f0','#60d098','#f0b860'];
+        return `<div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
+          <span style="font-weight:500">${t}</span>
+          <span style="font-family:var(--mono);color:${cols[i%3]}">${cnt}</span>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>
+</div>
+
+<div class="section-hdr"><span class="section-title">Detalle de operaciones</span></div>
+<div class="tbl-wrap">
+  <table>
+    <thead><tr>
+      <th>Fecha</th><th>Proyecto</th><th>UF</th><th>Tipo</th>
+      <th style="text-align:right">Sup. pond.</th>
+      <th style="text-align:right">Val. depto</th>
+      <th style="text-align:right">Val. total</th>
+      <th style="text-align:right">U$S/m²</th>
+      <th>Canal</th><th>Estado</th><th>Propietario</th>
+    </tr></thead>
+    <tbody>
+    ${rows.slice().sort((a,b)=>b.fecha.localeCompare(a.fecha)).map(v=>`<tr>
+      <td style="font-family:var(--mono);font-size:11px;white-space:nowrap;text-align:left">${v.fecha.slice(0,7)}</td>
+      <td style="text-align:left"><span class="tag" style="background:rgba(96,208,152,0.1);color:${PROY_COLORS[v.proyecto]||'#60d098'};font-size:10px">${v.proyecto}</span></td>
+      <td style="font-family:var(--mono);font-size:12px;text-align:left">${v.uf}</td>
+      <td style="font-size:12px;text-align:left">${v.tipo}</td>
+      <td>${v.sup_pond?v.sup_pond+' m²':'—'}</td>
+      <td class="positive">${v.val_depto?'U$S '+fmtN(v.val_depto):'—'}</td>
+      <td class="positive" style="font-weight:500">${v.val_total?'U$S '+fmtN(v.val_total):'—'}</td>
+      <td style="color:var(--muted)">${v.m2_precio?'U$S '+fmtN(v.m2_precio):'—'}</td>
+      <td style="font-size:11px;text-align:left">${v.canal||'—'}</td>
+      <td style="text-align:left"><span class="tag" style="background:${v.estado==='VENDIDO'?'rgba(96,208,152,0.15)':'rgba(240,184,96,0.15)'};color:${v.estado==='VENDIDO'?'var(--green)':'var(--amber)'};font-size:10px">${v.estado}</span></td>
+      <td style="font-size:11px;color:var(--muted);text-align:left">${v.propietario||'—'}</td>
+    </tr>`).join('')}
+    </tbody>
+  </table>
+</div>`;
+}
+
 
 // ─── INIT
 updateBadges();
