@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cashflow — Constructora</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg: #0f0f0f;
@@ -198,7 +199,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;}.sm{opacity:.7;font-size:11px}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box" onkeydown="if(event.key==='Enter')window.__lck()"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">03/06/2026 12:58 p. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box" onkeydown="if(event.key==='Enter')window.__lck()"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">03/06/2026 02:42 p. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -210,55 +211,55 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 
   <div class="nav-section">Ingresos</div>
   <button class="nav-item active" onclick="nav('dashboard')" id="nav-dashboard">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     Resumen
   </button>
   <button class="nav-item" onclick="nav('ventas')" id="nav-ventas">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
     Ventas / Cuotas
-    <span class="nav-badge" id="nb-ventas">25</span>
+    <span class="nav-badge" id="nb-ventas">0</span>
   </button>
   <button class="nav-item" onclick="nav('otroing')" id="nav-otroing">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
     Otros ingresos
-    <span class="nav-badge" id="nb-otroing">2</span>
+    <span class="nav-badge" id="nb-otroing">0</span>
   </button>
   <button class="nav-item" onclick="nav('caja')" id="nav-caja">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"></path></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
     Caja y Bancos
   </button>
   <button class="nav-item" onclick="nav('stock')" id="nav-stock">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
     Stock no corriente
-    <span class="nav-badge" id="nb-stock">47</span>
+    <span class="nav-badge" id="nb-stock">0</span>
   </button>
 
   <div class="nav-section">Egresos</div>
   <button class="nav-item" onclick="nav('egresos')" id="nav-egresos">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
     Egresos
-    <span class="nav-badge" id="nb-egresos">90</span>
+    <span class="nav-badge" id="nb-egresos">0</span>
   </button>
 
   <div class="nav-section">Proyección</div>
   <button class="nav-item" onclick="nav('dashboards')" id="nav-dashboards">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="9" height="9" rx="1"></rect><rect x="13" y="2" width="9" height="4" rx="1"></rect><rect x="13" y="9" width="9" height="4" rx="1"></rect><rect x="2" y="14" width="20" height="8" rx="1"></rect></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="4" rx="1"/><rect x="13" y="9" width="9" height="4" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/></svg>
     Dashboards
   </button>
   <button class="nav-item" onclick="nav('cashflow')" id="nav-cashflow">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
     Cashflow
   </button>
 
   <div class="nav-section">Importar</div>
   <button class="nav-item" onclick="nav('importar')" id="nav-importar">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
     Importar Excel
   </button>
 
   <div class="sidebar-footer" style="display:flex;flex-direction:column;gap:8px">
     <button class="btn btn-accent" onclick="publicarEnGitHub()" style="width:100%;justify-content:center;font-size:12px;gap:6px">
-      <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"></path></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
       Publicar en GitHub
     </button>
     <button class="btn" onclick="abrirConfigGitHub()" style="width:100%;justify-content:center;font-size:11px;padding:5px 8px">
@@ -273,7 +274,9 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
       </button>
       <input type="file" id="import-backup-file" accept=".json" style="display:none" onchange="importarBackup(this)">
     </div>
-    <div style="font-size:10px;color:var(--muted);line-height:1.4" id="gh-status"><span style="color:var(--amber)">Generando...</span></div>
+    <div style="font-size:10px;color:var(--muted);line-height:1.4" id="gh-status">
+      Datos guardados en este navegador.
+    </div>
   </div>
 </aside>
 
@@ -293,363 +296,42 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     <div class="panel active" id="panel-dashboard">
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap">
         <span style="font-size:12px;color:var(--muted);font-weight:500">Proyecto:</span>
-        <button class="btn btn-sm proy-btn active" data-p="" onclick="setFiltroProyecto('')" style="background: var(--accent); color: rgb(15, 15, 15); border-color: var(--accent);">Todos</button>
+        <button class="btn btn-sm proy-btn active" data-p="" onclick="setFiltroProyecto('')">Todos</button>
         <button class="btn btn-sm proy-btn" data-p="Q2" onclick="setFiltroProyecto('Q2')" style="border-color:#60b4f0">Q2</button>
         <button class="btn btn-sm proy-btn" data-p="MELIAN 3899" onclick="setFiltroProyecto('MELIAN 3899')" style="border-color:#60d098">MELIAN 3899</button>
-        <button class="btn btn-sm proy-btn" data-p="PAROISSIEN 2" onclick="setFiltroProyecto('PAROISSIEN 2')" style="border-color: rgb(240, 184, 96);">PAROISSIEN 2</button>
+        <button class="btn btn-sm proy-btn" data-p="PAROISSIEN 2" onclick="setFiltroProyecto('PAROISSIEN 2')" style="border-color:#f0b860">PAROISSIEN 2</button>
         <button class="btn btn-sm proy-btn" data-p="OLAZABAL" onclick="setFiltroProyecto('OLAZABAL')" style="border-color:#c8f060">OLAZABAL</button>
         <button class="btn btn-sm proy-btn" data-p="VILELA 3399" onclick="setFiltroProyecto('VILELA 3399')" style="border-color:#d098f0">VILELA 3399</button>
         <button class="btn btn-sm proy-btn" data-p="ESTUDIO" onclick="setFiltroProyecto('ESTUDIO')" style="border-color:#f06090">ESTUDIO</button>
       </div>
 
-      <div class="metrics-row" id="dash-metrics">
-    <div class="metric-card"><div class="metric-label">Caja actual (USD)</div><div class="metric-val accent">U$S 3.410.000</div><div class="metric-sub">Suma de todas las cuentas</div></div>
-    <div class="metric-card"><div class="metric-label">Ingresos este mes</div><div class="metric-val green">U$S 1.982.948</div><div class="metric-sub">Jun 2026</div></div>
-    <div class="metric-card"><div class="metric-label">Egresos este mes</div><div class="metric-val red">U$S 1.260.143</div><div class="metric-sub">Jun 2026</div></div>
-    <div class="metric-card"><div class="metric-label">Ventas activas</div><div class="metric-val">25</div><div class="metric-sub">Con plan de pago</div></div>
-    <div class="metric-card"><div class="metric-label">Stock disponible</div><div class="metric-val amber">47 <span style="font-size:13px;color:var(--muted)">uds.</span></div><div class="metric-sub">U$S 18.286.979</div></div>
-  </div>
+      <div class="metrics-row" id="dash-metrics"></div>
 
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
         <span style="font-size:12px;color:var(--muted);font-weight:500">Proyección:</span>
-        <button class="btn btn-sm dash-preset" data-m="6" onclick="setDashPreset(6)" style="">6 meses</button>
-        <button class="btn btn-sm dash-preset active" data-m="12" onclick="setDashPreset(12)" style="background: var(--accent); color: rgb(15, 15, 15); border-color: var(--accent);">12 meses</button>
-        <button class="btn btn-sm dash-preset" data-m="24" onclick="setDashPreset(24)" style="">24 meses</button>
-        <button class="btn btn-sm dash-preset" data-m="36" onclick="setDashPreset(36)">36 meses</button>
+        <button class="btn btn-sm dash-preset active" data-m="6"  onclick="setDashPreset(6)">6 meses</button>
+        <button class="btn btn-sm dash-preset"        data-m="12" onclick="setDashPreset(12)">12 meses</button>
+        <button class="btn btn-sm dash-preset"        data-m="24" onclick="setDashPreset(24)">24 meses</button>
+        <button class="btn btn-sm dash-preset"        data-m="36" onclick="setDashPreset(36)">36 meses</button>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px" id="dash-proj-metrics">
-    <div class="metric-card" style="border-color:rgba(96,208,152,0.3)">
-      <div class="metric-label">Ingresos proyectados 12m</div>
-      <div class="metric-val green">U$S 4.503.617</div>
-      <div class="metric-sub">Cobros de cuotas vigentes</div>
-    </div>
-    <div class="metric-card" style="border-color:rgba(240,96,96,0.3)">
-      <div class="metric-label">Egresos proyectados 12m</div>
-      <div class="metric-val red">U$S 9.854.723</div>
-      <div class="metric-sub">Gastos registrados</div>
-    </div>
-    <div class="metric-card" style="border-color:rgba(240,96,96,0.3)">
-      <div class="metric-label">Saldo proyectado 12m</div>
-      <div class="metric-val red">U$S -1.941.106</div>
-      <div class="metric-sub">Caja disponible hoy + flujo 12m</div>
-    </div>
-  </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px" id="dash-proj-metrics"></div>
 
-      <div id="dash-insight" style="margin-bottom:20px">
-    <div style="background:rgba(240,96,96,0.08);border:1px solid rgba(240,96,96,0.3);border-radius:var(--radius);padding:16px 18px;margin-bottom:0">
-      <div style="display:flex;gap:10px;align-items:flex-start;margin-bottom:14px">
-        <div style="font-size:18px;flex-shrink:0">⚠️</div>
-        <div style="font-size:13px;line-height:1.6">Flujo proyectado a <strong>12 meses</strong> negativo. Déficit: <strong style="color:var(--red)">U$S 1.941.106</strong>.
-          
-        </div>
-      </div>
-      
-      <div style="border-top:1px solid var(--border);padding-top:14px">
-        <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px">
-          Simulador — ¿Cuántas unidades vender para cubrir el déficit?
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px">
-          <div style="background:var(--surface2);border-radius:var(--radius-sm);padding:10px 12px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:3px">Stock disponible</div>
-            <div style="font-size:18px;font-weight:500;font-family:var(--mono)">47 uds.</div>
-            <div style="font-size:10px;color:var(--muted)">128 m² promedio</div>
-          </div>
-          <div style="background:var(--surface2);border-radius:var(--radius-sm);padding:10px 12px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:3px">Precio m² promedio</div>
-            <div style="font-size:18px;font-weight:500;font-family:var(--mono)">U$S 3.044</div>
-          </div>
-          <div style="background:var(--surface2);border-radius:var(--radius-sm);padding:10px 12px">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:3px">Precio unidad promedio</div>
-            <div style="font-size:18px;font-weight:500;font-family:var(--mono)">U$S 389.085</div>
-          </div>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px">
-          <div>
-            <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px">Entrega al firmar</label>
-            <select id="sim-entrega" onchange="recalcSim()" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px 8px;color:var(--text);font-size:12px;outline:none">
-              <option value="0.30">30%</option>
-              <option value="0.40" selected="">40%</option>
-              <option value="0.50">50%</option>
-              <option value="0.60">60%</option>
-              <option value="1.00">100% contado</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px">Saldo en cuotas</label>
-            <select id="sim-cuotas" onchange="recalcSim()" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px 8px;color:var(--text);font-size:12px;outline:none">
-              <option value="12">12 cuotas</option>
-              <option value="18">18 cuotas</option>
-              <option value="24" selected="">24 cuotas</option>
-              <option value="30">30 cuotas</option>
-              <option value="36">36 cuotas</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px">Precio unit. (USD)</label>
-            <input id="sim-precio" type="number" value="389085" onchange="recalcSim()" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px 8px;color:var(--text);font-size:12px;outline:none">
-          </div>
-          <div>
-            <label style="font-size:11px;color:var(--muted);display:block;margin-bottom:4px">Período (meses)</label>
-            <input id="sim-meses" type="number" value="12" min="1" max="36" onchange="recalcSim()" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:6px 8px;color:var(--text);font-size:12px;outline:none">
-          </div>
-        </div>
-        <div id="sim-resultado" style="background:var(--surface2);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;line-height:1.8">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px">
-        <div>
-          <div style="font-size:10px;color:var(--muted);margin-bottom:2px">Plan: 100% firma + 0% en 12 cuotas</div>
-          <div>Ingreso por unidad en 12m: <strong style="font-family:var(--mono)">U$S 389.085</strong></div>
-          <div style="margin-top:4px">Unidades necesarias: <strong style="font-size:15px;color:var(--accent)">5</strong> unidades</div>
-          <div style="font-size:11px;color:var(--muted);margin-top:2px">
-            (vs. 5 uds si fuera 100% contado)
-          </div>
-        </div>
-        <div>
-          <div style="font-size:10px;color:var(--muted);margin-bottom:2px">Ingreso efectivo de esas 5 ventas</div>
-          <div>Contado (firma): <strong style="font-family:var(--mono);color:var(--green)">U$S 1.945.425</strong></div>
-          <div>Cuotas en 12m: <strong style="font-family:var(--mono);color:var(--blue)">U$S 0</strong></div>
-          <div>Saldo restante (post-período): <strong style="font-family:var(--mono);color:var(--muted)">U$S 0</strong></div>
-        </div>
-      </div>
-      <div style="padding:8px 10px;border-radius:var(--radius-sm);background:rgba(96,208,152,0.1);font-size:12px;color:var(--green)">
-        ✓ El stock disponible (47 uds.) es suficiente para cubrir el déficit con este plan.
-      </div></div>
-      </div>
-    </div></div>
+      <div id="dash-insight" style="margin-bottom:20px"></div>
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
         <div>
           <div class="section-hdr"><span class="section-title">Posición de caja</span></div>
-          <div id="dash-caja-detail" style="font-size:13px">
-    <div style="display:flex;flex-direction:column;gap:0">
-      <div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Caja efectivo</span>
-          <span style="font-family:var(--mono);font-size:12px">U$S 1.731.000</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Banco Francisco</span>
-          <span style="font-family:var(--mono);font-size:12px">U$S 200.000</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Banco Javier</span>
-          <span style="font-family:var(--mono);font-size:12px">—</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Banco Q2</span>
-          <span style="font-family:var(--mono);font-size:12px">U$S 490.000</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Banco Melian</span>
-          <span style="font-family:var(--mono);font-size:12px">—</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Banco Paroissien</span>
-          <span style="font-family:var(--mono);font-size:12px">—</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Banco Olazabal</span>
-          <span style="font-family:var(--mono);font-size:12px">—</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Cuenta exterior</span>
-          <span style="font-family:var(--mono);font-size:12px">U$S 589.000</span>
-        </div><div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">
-          <span style="color:var(--muted);font-size:12px">Otras</span>
-          <span style="font-family:var(--mono);font-size:12px">U$S 400.000</span>
-        </div>
-      <div style="display:flex;justify-content:space-between;padding:8px 0;font-weight:600;margin-top:2px">
-        <span>Total $</span>
-        <span style="font-family:var(--mono);color:var(--accent)">U$S 3.410.000</span>
-      </div>
-    </div>
-  </div>
+          <div id="dash-caja-detail" style="font-size:13px"></div>
         </div>
       </div>
-      <div id="dash-breakeven-table" style="margin-bottom:24px">
-    <div class="section-hdr" style="margin-bottom:8px">
-      <span class="section-title">Saldo de caja mes a mes</span>
-      <span style="font-size:11px;color:var(--muted)">Caja actual + ingresos acumulados − egresos acumulados</span>
-    </div>
-    <div class="tbl-wrap" style="max-height:260px;overflow-y:auto">
-      <table>
-        <thead><tr>
-          <th style="position:sticky;top:0;background:var(--surface2)">Mes</th>
-          <th style="position:sticky;top:0;background:var(--surface2);text-align:right;color:#60d098">Ingresos</th>
-          <th style="position:sticky;top:0;background:var(--surface2);text-align:right;color:#f06060">Egresos</th>
-          <th style="position:sticky;top:0;background:var(--surface2);text-align:right">Flujo neto</th>
-          <th style="position:sticky;top:0;background:var(--surface2);text-align:right">Saldo caja</th>
-        </tr></thead>
-        <tbody><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Jun 2026</td>
-      <td class="positive">U$S 1.982.948</td>
-      <td class="negative">U$S 1.260.143</td>
-      <td class="positive">+U$S 722.806</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--green)">U$S 4.132.806</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Jul 2026</td>
-      <td class="positive">U$S 309.620</td>
-      <td class="negative">U$S 609.798</td>
-      <td class="negative">U$S -300.178</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--green)">U$S 3.832.627</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Ago 2026</td>
-      <td class="positive">U$S 200.145</td>
-      <td class="negative">U$S 382.902</td>
-      <td class="negative">U$S -182.757</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 3.649.870</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Sep 2026</td>
-      <td class="positive">U$S 190.145</td>
-      <td class="negative">U$S 452.580</td>
-      <td class="negative">U$S -262.435</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 3.387.435</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Oct 2026</td>
-      <td class="positive">U$S 190.145</td>
-      <td class="negative">U$S 477.864</td>
-      <td class="negative">U$S -287.719</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 3.099.716</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Nov 2026</td>
-      <td class="positive">U$S 362.745</td>
-      <td class="negative">U$S 1.243.098</td>
-      <td class="negative">U$S -880.353</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 2.219.363</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Dic 2026</td>
-      <td class="positive">U$S 350.145</td>
-      <td class="negative">U$S 952.315</td>
-      <td class="negative">U$S -602.170</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 1.617.193</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Ene 2027</td>
-      <td class="positive">U$S 199.945</td>
-      <td class="negative">U$S 1.181.147</td>
-      <td class="negative">U$S -981.202</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 635.991</td>
-    </tr><tr style="">
-      <td style="font-weight:500;white-space:nowrap;"> Feb 2027</td>
-      <td class="positive">U$S 199.945</td>
-      <td class="negative">U$S 731.397</td>
-      <td class="negative">U$S -531.452</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--text)">U$S 104.539</td>
-    </tr><tr style="background:rgba(240,96,96,0.1);color:var(--red)">
-      <td style="font-weight:500;white-space:nowrap;color:var(--red)">⚠  Mar 2027</td>
-      <td class="positive">U$S 199.945</td>
-      <td class="negative">U$S 1.018.488</td>
-      <td class="negative">U$S -818.543</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--red)">U$S -714.004</td>
-    </tr><tr style="color:var(--red)">
-      <td style="font-weight:500;white-space:nowrap;"> Abr 2027</td>
-      <td class="positive">U$S 175.245</td>
-      <td class="negative">U$S 666.169</td>
-      <td class="negative">U$S -490.924</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--red)">U$S -1.204.928</td>
-    </tr><tr style="color:var(--red)">
-      <td style="font-weight:500;white-space:nowrap;"> May 2027</td>
-      <td class="positive">U$S 142.645</td>
-      <td class="negative">U$S 878.823</td>
-      <td class="negative">U$S -736.178</td>
-      <td style="font-weight:600;font-family:var(--mono);font-size:12px;color:var(--red)">U$S -1.941.106</td>
-    </tr></tbody>
-      </table>
-    </div>
-    <div style="font-size:12px;color:var(--red);margin-top:8px">⚠ La caja proyectada se vuelve negativa en <strong>Mar 2027</strong> (mes 10).</div>
-  </div>
+      <div id="dash-breakeven-table" style="margin-bottom:24px"></div>
       <div style="margin-bottom:24px">
         <div class="section-hdr"><span class="section-title">Últimas ventas</span></div>
-        <div id="dash-ultimas-ventas"><div class="tbl-wrap">
-        <table>
-          <thead><tr>
-            <th>Unidad</th><th>Comprador</th><th>Proyecto</th>
-            <th style="text-align:right">Precio total</th><th>Firma</th>
-            <th>Tramos</th>
-          </tr></thead>
-          <tbody><tr>
-            <td style="font-weight:500">501</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#d098f0;font-size:10px">VILELA 3399</span></td>
-            <td><span class="tag tag-usd">U$S 150.000</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Dic 2026</td>
-            <td style="font-size:11px;color:var(--muted)">1 tramo</td>
-          </tr><tr>
-            <td style="font-weight:500">401 Maria</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60d098;font-size:10px">MELIAN 3899</span></td>
-            <td><span class="tag tag-usd">U$S 239.800</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Nov 2026</td>
-            <td style="font-size:11px;color:var(--muted)">2 tramos</td>
-          </tr><tr>
-            <td style="font-weight:500">503 Maria</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60d098;font-size:10px">MELIAN 3899</span></td>
-            <td><span class="tag tag-usd">U$S 180.000</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Nov 2026</td>
-            <td style="font-size:11px;color:var(--muted)">2 tramos</td>
-          </tr><tr>
-            <td style="font-weight:500">403 (</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60d098;font-size:10px">MELIAN 3899</span></td>
-            <td><span class="tag tag-usd">U$S 318.600</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Jul 2026</td>
-            <td style="font-size:11px;color:var(--muted)">2 tramos</td>
-          </tr><tr>
-            <td style="font-weight:500">602 (Ana y Pilar)</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60d098;font-size:10px">MELIAN 3899</span></td>
-            <td><span class="tag tag-usd">U$S 265.140</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Jul 2026</td>
-            <td style="font-size:11px;color:var(--muted)">1 tramo</td>
-          </tr><tr>
-            <td style="font-weight:500">506 (Miranda)</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60b4f0;font-size:10px">Q2</span></td>
-            <td><span class="tag tag-usd">U$S 250.000</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Jun 2026</td>
-            <td style="font-size:11px;color:var(--muted)">1 tramo</td>
-          </tr><tr>
-            <td style="font-weight:500">501 Matias</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60b4f0;font-size:10px">Q2</span></td>
-            <td><span class="tag tag-usd">U$S 362.500</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Jun 2026</td>
-            <td style="font-size:11px;color:var(--muted)">2 tramos</td>
-          </tr><tr>
-            <td style="font-weight:500">601 (Welsh)</td>
-            <td style="color:var(--muted);font-size:12px">Sin especificar</td>
-            <td><span class="tag" style="background:rgba(96,208,152,0.1);color:#60b4f0;font-size:10px">Q2</span></td>
-            <td><span class="tag tag-usd">U$S 234.600</span></td>
-            <td style="font-family:var(--mono);font-size:12px">Jun 2026</td>
-            <td style="font-size:11px;color:var(--muted)">1 tramo</td>
-          </tr></tbody>
-        </table>
-      </div></div>
+        <div id="dash-ultimas-ventas"></div>
       </div>
       <div class="section-hdr"><span class="section-title">Próximos cobros</span></div>
-      <div id="dash-proximos">
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px">
-      <div><div style="font-size:13px;font-weight:500">506 (Miranda) — Cuota</div><div style="font-size:11px;color:var(--muted)">Sin especificar · Jun 2026</div></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green)">U$S 250.000</div>
-    </div>
-  
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px">
-      <div><div style="font-size:13px;font-weight:500">501 Matias — Cuota</div><div style="font-size:11px;color:var(--muted)">Sin especificar · Jun 2026</div></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green)">U$S 124.925</div>
-    </div>
-  
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px">
-      <div><div style="font-size:13px;font-weight:500">601 (Welsh) — Cuota</div><div style="font-size:11px;color:var(--muted)">Sin especificar · Jun 2026</div></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green)">U$S 6.900</div>
-    </div>
-  
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px">
-      <div><div style="font-size:13px;font-weight:500">504 (Carrera) — Cuota</div><div style="font-size:11px;color:var(--muted)">Sin especificar · Jun 2026</div></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green)">U$S 4.000</div>
-    </div>
-  
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px">
-      <div><div style="font-size:13px;font-weight:500">305 (Matias) — Cuota</div><div style="font-size:11px;color:var(--muted)">Sin especificar · Jun 2026</div></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green)">U$S 3.000</div>
-    </div>
-  
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:6px">
-      <div><div style="font-size:13px;font-weight:500">303 (Guido) — Cuota</div><div style="font-size:11px;color:var(--muted)">Sin especificar · Jun 2026</div></div>
-      <div style="font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green)">U$S 164.800</div>
-    </div>
-  </div>
+      <div id="dash-proximos"></div>
     </div>
 
     <!-- DASHBOARDS -->
@@ -671,10 +353,10 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
       </div>
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap">
         <span style="font-size:12px;color:var(--muted)">Período:</span>
-        <button class="btn btn-sm db-preset active" data-m="6" onclick="setDbPreset(6)">6 meses</button>
-        <button class="btn btn-sm db-preset" data-m="12" onclick="setDbPreset(12)">12 meses</button>
-        <button class="btn btn-sm db-preset" data-m="24" onclick="setDbPreset(24)">24 meses</button>
-        <button class="btn btn-sm db-preset" data-m="36" onclick="setDbPreset(36)">36 meses</button>
+        <button class="btn btn-sm db-preset active" data-m="6"  onclick="setDbPreset(6)">6 meses</button>
+        <button class="btn btn-sm db-preset"        data-m="12" onclick="setDbPreset(12)">12 meses</button>
+        <button class="btn btn-sm db-preset"        data-m="24" onclick="setDbPreset(24)">24 meses</button>
+        <button class="btn btn-sm db-preset"        data-m="36" onclick="setDbPreset(36)">36 meses</button>
         <span style="font-size:12px;color:var(--muted);margin-left:8px">o personalizado:</span>
         <input type="month" id="db-desde" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:5px 8px;color:var(--text);font-size:12px;outline:none">
         <input type="month" id="db-hasta" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:5px 8px;color:var(--text);font-size:12px;outline:none">
@@ -687,7 +369,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     <div class="panel" id="panel-ventas">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
         <div style="position:relative;flex:1;min-width:220px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input id="search-ventas" placeholder="Buscar por unidad, comprador, proyecto…" oninput="renderVentas()" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px 8px 32px;color:var(--text);font-family:var(--font);font-size:13px;outline:none">
         </div>
         <select id="filter-ventas-proy" onchange="renderVentas()" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;color:var(--text);font-size:13px;outline:none">
@@ -737,7 +419,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     <div class="panel" id="panel-egresos">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
         <div style="position:relative;flex:1;min-width:220px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;color:var(--muted);pointer-events:none"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           <input id="search-egresos" placeholder="Buscar por descripción, proyecto, notas…" oninput="renderEgresos()" style="width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px 8px 32px;color:var(--text);font-family:var(--font);font-size:13px;outline:none">
         </div>
         <select id="filter-egresos-proy" onchange="renderEgresos()" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;color:var(--text);font-size:13px;outline:none">
@@ -1033,7 +715,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     <span id="modal-saldo-title">Actualizar saldo</span>
     <button class="btn btn-ghost btn-sm" onclick="closeModal('modal-saldo')">✕</button>
   </div>
-  <div class="form-group"><label>Cuenta</label><input id="ms2-cuenta" readonly="" style="opacity:0.6"></div>
+  <div class="form-group"><label>Cuenta</label><input id="ms2-cuenta" readonly style="opacity:0.6"></div>
   <div class="form-group"><label>Fecha</label><input type="date" id="ms2-fecha"></div>
   <div class="form-group"><label>Saldo actual</label><input type="number" id="ms2-monto" placeholder="0" step="0.01"></div>
   <div class="form-group"><label>Nota (opcional)</label><input id="ms2-nota" placeholder="Ej: Cierre del día"></div>
@@ -3410,165 +3092,11 @@ function descargarPlantillaVentas(){
 
 
 
-// ─── GITHUB PUBLISH ──────────────────────────────────────────────────────────
-function abrirConfigGitHub(){
-  var cfg=cargarConfigGH();
-  document.getElementById('gh-token-input').value=cfg.token||'';
-  document.getElementById('gh-user-input').value=cfg.user||'livereports';
-  document.getElementById('gh-repo-input').value=cfg.repo||'cashflow';
-  document.getElementById('gh-pwd-input').value=cfg.pwd||'';
-  document.getElementById('gh-config-msg').textContent='';
-  openModal('modal-github');
-}
-function cargarConfigGH(){
-  try{return JSON.parse(localStorage.getItem('cf_gh_config')||'{}');}catch(e){return {};}
-}
-function guardarConfigGitHub(){
-  var token=document.getElementById('gh-token-input').value.trim();
-  var user=document.getElementById('gh-user-input').value.trim();
-  var repo=document.getElementById('gh-repo-input').value.trim();
-  var pwd=document.getElementById('gh-pwd-input').value.trim();
-  var msg=document.getElementById('gh-config-msg');
-  if(!token||!user||!repo||!pwd){msg.style.color='var(--red)';msg.textContent='Completá todos los campos.';return;}
-  if(pwd.length<4){msg.style.color='var(--red)';msg.textContent='Contraseña muy corta (mínimo 4 caracteres).';return;}
-  localStorage.setItem('cf_gh_config',JSON.stringify({token:token,user:user,repo:repo,pwd:pwd}));
-  msg.style.color='var(--green)';msg.textContent='Configuración guardada.';
-  setTimeout(function(){closeModal('modal-github');},1000);
-}
-function hashPwd(s){var h=0;for(var i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}return h;}
 
-function construirSnapshot(pwd,fecha,hora){
-  // Use document.documentElement.outerHTML — gets full page source as-is
-  // Then do surgical replacements on the text
-  var src = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-
-  // 1. Inject data variables right before the app script runs
-  //    by replacing the load() calls with direct data
-  src = src.replace(/let ventas\s*=\s*load\([^;]+\);/,
-    'let ventas=' + JSON.stringify(ventas) + ';');
-  src = src.replace(/let stock\s*=\s*load\([^;]+\);/,
-    'let stock=' + JSON.stringify(stock) + ';');
-  src = src.replace(/let egresos\s*=\s*load\([^;]+\);/,
-    'let egresos=' + JSON.stringify(egresos) + ';');
-  src = src.replace(/let otrosIng\s*=\s*load\([^;]+\);/,
-    'let otrosIng=' + JSON.stringify(otrosIng) + ';');
-  src = src.replace(/let caja\s*=\s*load\([^;]+\);/,
-    'let caja=' + JSON.stringify(caja) + ';');
-
-  // 2. Disable save() so nothing writes to localStorage
-  src = src.replace(/function save\(k,\s*v\)\{[^}]*\}/,
-    'function save(k,v){}');
-
-  // 3. Password login screen
-  var ph = hashPwd(pwd);
-  var sc = '<'+'\/script>';
-  var login = '<div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center">'
-    +'<div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center">'
-    +'<div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div>'
-    +'<div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div>'
-    +'<div style="font-size:12px;color:#888;margin-bottom:20px">Ingres\u00e1 la contrase\u00f1a</div>'
-    +'<input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box" onkeydown="if(event.key===\'Enter\')window.__lck()">'
-    +'<div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contrase\u00f1a incorrecta</div>'
-    +'<button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button>'
-    +'</div></div>'
-    +'<sc'+'ript>'
-    +'(function(){var ph='+ph+';'
-    +'window.__lck=function(){var v=document.getElementById("pi").value,h=0;'
-    +'for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}'
-    +'if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");'
-    +'if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}'
-    +'else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};'
-    +'if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}'
-    +'else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();'
-    +sc;
-
-  var style='<style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;}.sm{opacity:.7;font-size:11px}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style>';
-  var banner='<div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">'+fecha+' '+hora+'</div></div>';
-
-  var cleanup='<sc'+'ript>(function(){'
-    +'var sf=document.querySelector(".sidebar-footer");'
-    +'if(sf)sf.innerHTML=\'<div style="font-size:10px;text-align:center;padding:8px;color:#888">Solo lectura</div>\';'
-    +'document.querySelectorAll("button").forEach(function(b){'
-    +'var t=b.textContent.trim();'
-    +'if(t.startsWith("+")||t==="\u270e"||t==="\u2715"'
-    +'||t.includes("Exportar")||t.includes("Backup")||t.includes("Restaurar")'
-    +'||t.includes("Publicar")||t.includes("Configurar")'
-    +'||t.includes("Actualizar saldo")||t.includes("Registrar"))'
-    +'b.style.display="none";});'
-    +'document.querySelectorAll(".modal-overlay").forEach(function(m){m.remove();});'
-    +'})();<'+'/sc'+'ript>';
-
-  // 4. Inject into the HTML
-  src = src.replace('</head>', style + '</head>');
-  src = src.replace('<body>', '<body>' + login + banner);
-  src = src.replace('<script>(function(){var sf=document.querySelector(".sidebar-footer");if(sf)sf.innerHTML='<div style="font-size:10px;text-align:center;padding:8px;color:#888">Solo lectura</div>';document.querySelectorAll("button").forEach(function(b){var t=b.textContent.trim();if(t.startsWith("+")||t==="✎"||t==="✕"||t.includes("Exportar")||t.includes("Backup")||t.includes("Restaurar")||t.includes("Publicar")||t.includes("Configurar")||t.includes("Actualizar saldo")||t.includes("Registrar"))b.style.display="none";});document.querySelectorAll(".modal-overlay").forEach(function(m){m.remove();});})();</script>
-</body>', cleanup + '\n</body>');
-
-  return src;
-}
-
-async function publicarEnGitHub(){
-  var cfg=cargarConfigGH();
-  var st=document.getElementById('gh-status');
-  if(!cfg.token||!cfg.user||!cfg.repo||!cfg.pwd){abrirConfigGitHub();return;}
-  var fecha=new Date().toLocaleDateString('es-AR',{day:'2-digit',month:'2-digit',year:'numeric'});
-  var hora=new Date().toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'});
-  st.innerHTML='<span style="color:var(--amber)">Generando...</span>';
-  var snap=construirSnapshot(cfg.pwd,fecha,hora);
-  if(!snap){st.innerHTML='<span style="color:var(--red)">Error generando snapshot.</span>';return;}
-  var b64=btoa(unescape(encodeURIComponent(snap)));
-  st.innerHTML='<span style="color:var(--amber)">Conectando...</span>';
-  var api='https://api.github.com/repos/'+cfg.user+'/'+cfg.repo+'/contents/index.html';
-  var hdrs={'Authorization':'token '+cfg.token,'Content-Type':'application/json','Accept':'application/vnd.github.v3+json'};
-  var sha=null;
-  try{var r0=await fetch(api,{headers:hdrs});if(r0.ok){var d=await r0.json();sha=d.sha;}}catch(e){}
-  st.innerHTML='<span style="color:var(--amber)">Publicando...</span>';
-  try{
-    var body={message:'Actualización '+fecha+' '+hora,content:b64};
-    if(sha)body.sha=sha;
-    var res=await fetch(api,{method:'PUT',headers:hdrs,body:JSON.stringify(body)});
-    if(res.ok){
-      st.innerHTML='<span style="color:var(--green)">&#x2713; Publicado '+hora+'</span><br>'
-        +'<a href="https://'+cfg.user+'.github.io/'+cfg.repo+'" target="_blank" style="color:var(--accent);font-size:10px">'+cfg.user+'.github.io/'+cfg.repo+'</a>';
-    }else{
-      var er=await res.json();
-      st.innerHTML='<span style="color:var(--red)">'+(er.message||res.status)+'</span>';
-    }
-  }catch(e){st.innerHTML='<span style="color:var(--red)">'+e.message+'</span>';}
-}
-
-// ─── EXPORT / BACKUP / RESTORE ───────────────────────────────────────────────
-function exportarBackup(){
-  var data={v:1,fecha:new Date().toISOString(),ventas:ventas,stock:stock,egresos:egresos,otrosIng:otrosIng,caja:caja};
-  var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
-  var a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download='cashflow_backup_'+new Date().toISOString().slice(0,10)+'.json';
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
-}
-function importarBackup(input){
-  var file=input.files[0];if(!file)return;
-  var reader=new FileReader();
-  reader.onload=function(e){
-    try{
-      var data=JSON.parse(e.target.result);
-      if(!data.v||!data.ventas)throw new Error('Formato inválido');
-      if(!confirm('Restaurar backup del '+(data.fecha?data.fecha.slice(0,10):'archivo')+'?\nSe reemplazarán todos los datos actuales.'))return;
-      ventas=data.ventas||[];stock=data.stock||[];egresos=data.egresos||[];otrosIng=data.otrosIng||[];
-      if(data.caja)caja=data.caja;
-      save('ventas',ventas);save('stock',stock);save('egresos',egresos);save('otrosIng',otrosIng);save('caja',caja);
-      updateBadges();renderDashboard();
-      alert('Backup restaurado correctamente.');
-    }catch(err){alert('Error: '+err.message);}
-    input.value='';
-  };
-  reader.readAsText(file);
-}
-
-// ─── INIT ────────────────────────────────────────────────────────────────────
+// ─── INIT
 updateBadges();
 renderDashboard();
 </script>
-
-
-</body></html>
+<script>(function(){var sf=document.querySelector(".sidebar-footer");if(sf)sf.innerHTML='<div style="font-size:10px;text-align:center;padding:8px;color:#888">Solo lectura</div>';document.querySelectorAll("button").forEach(function(b){var t=b.textContent.trim();if(t.startsWith("+")||t==="✎"||t==="✕"||t.includes("Exportar")||t.includes("Backup")||t.includes("Restaurar")||t.includes("Publicar")||t.includes("Configurar")||t.includes("Actualizar saldo")||t.includes("Registrar"))b.style.display="none";});document.querySelectorAll(".modal-overlay").forEach(function(m){m.remove();});})();</script>
+</body>
+</html>
