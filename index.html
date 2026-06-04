@@ -26,6 +26,21 @@
   --radius: 10px;
   --radius-sm: 6px;
 }
+[data-theme="light"] {
+  --bg: #f4f4f0;
+  --surface: #ffffff;
+  --surface2: #eeeee9;
+  --border: #d8d8d0;
+  --border2: #c8c8c0;
+  --text: #1a1a18;
+  --muted: #777770;
+  --accent: #5a8a00;
+  --accent-dim: #4a7400;
+  --blue: #1a72c8;
+  --red: #c82020;
+  --amber: #b06000;
+  --green: #6054c8;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;line-height:1.5}
 ::-webkit-scrollbar{width:6px;height:6px}
@@ -199,7 +214,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.5);}.sm{opacity:.7}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">04/06/2026 12:37 p. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">04/06/2026 05:24 p. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -209,11 +224,18 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     <div class="sub">Panel de gestión</div>
   </div>
 
-  <div class="nav-section">Ingresos</div>
   <div class="nav-section">Proyección</div>
   <button class="nav-item active" onclick="nav('dashboard')" id="nav-dashboard">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
     Resumen
+  </button>
+  <button class="nav-item" onclick="nav('ventas-anal')" id="nav-ventas-anal">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 15 15"/></svg>
+    Ventas
+  </button>
+  <button class="nav-item" onclick="nav('comercial')" id="nav-comercial">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 16l-4-4 4-4"/><path d="M3 12h14"/><circle cx="19" cy="12" r="0"/><rect x="2" y="3" width="8" height="5" rx="1"/><rect x="2" y="16" width="8" height="5" rx="1"/></svg>
+    Comercial
   </button>
   <button class="nav-item" onclick="nav('dashboards')" id="nav-dashboards">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="4" rx="1"/><rect x="13" y="9" width="9" height="4" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/></svg>
@@ -222,14 +244,6 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
   <button class="nav-item" onclick="nav('cashflow')" id="nav-cashflow">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
     Cashflow
-  </button>
-  <button class="nav-item" onclick="nav('ventas-anal')" id="nav-ventas-anal">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 15 15"/></svg>
-    Ventas
-  </button>
-  <button class="nav-item" onclick="nav('comercial')" id="nav-comercial">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-    Comercial
   </button>
 
   <div class="nav-section">Ingresos</div>
@@ -266,6 +280,9 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     Importar Excel
   </button>
   <div class="sidebar-footer" style="display:flex;flex-direction:column;gap:8px">
+    <button id="theme-toggle" onclick="toggleTheme()" style="width:100%;justify-content:center;font-size:11px;padding:6px 8px;border-radius:var(--radius-sm);border:1px solid var(--border2);background:var(--surface2);color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:6px;transition:all .2s">
+      <span id="theme-icon">☀️</span><span id="theme-label">Modo claro</span>
+    </button>
     <button class="btn btn-accent" onclick="publicarEnGitHub()" style="width:100%;justify-content:center;font-size:12px">📤 Publicar en GitHub</button>
     <button class="btn" onclick="abrirConfigGitHub()" style="width:100%;justify-content:center;font-size:11px;padding:5px 8px">⚙ Configurar GitHub</button>
     <div style="display:flex;gap:6px">
@@ -302,8 +319,6 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
         <button class="btn btn-sm proy-btn" data-p="ESTUDIO" onclick="setFiltroProyecto('ESTUDIO')" style="border-color:#f06090">ESTUDIO</button>
       </div>
 
-      <div class="metrics-row" id="dash-metrics"></div>
-
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
         <span style="font-size:12px;color:var(--muted);font-weight:500">Proyección:</span>
         <button class="btn btn-sm dash-preset active" data-m="6"  onclick="setDashPreset(6)">6 meses</button>
@@ -311,10 +326,6 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
         <button class="btn btn-sm dash-preset"        data-m="24" onclick="setDashPreset(24)">24 meses</button>
         <button class="btn btn-sm dash-preset"        data-m="36" onclick="setDashPreset(36)">36 meses</button>
       </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px" id="dash-proj-metrics"></div>
-
-      <div id="dash-insight" style="margin-bottom:20px"></div>
 
       <!-- Escenario de inyección de caja -->
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;flex-wrap:wrap">
@@ -328,10 +339,20 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
         <button class="btn btn-sm" onclick="document.getElementById('sim-inject-amount').value='';renderDashboardProj()">Limpiar</button>
       </div>
 
-      <!-- Gráfico saldo acumulado (vertical) -->
-      <div id="dash-chart-saldo-wrap" style="margin-bottom:20px"></div>
-
+      <!-- Tabla saldo mes a mes -->
       <div id="dash-breakeven-table" style="margin-bottom:24px"></div>
+
+      <!-- Gráfico saldo proyectado -->
+      <div id="dash-chart-saldo-wrap" style="margin-bottom:24px"></div>
+
+      <!-- Indicadores actuales -->
+      <div class="metrics-row" id="dash-metrics"></div>
+
+      <!-- Indicadores proyectados + simulador -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px" id="dash-proj-metrics"></div>
+      <div id="dash-insight" style="margin-bottom:20px"></div>
+
+      <!-- Últimas ventas -->
       <div style="margin-bottom:24px">
         <div class="section-hdr"><span class="section-title">Últimas ventas</span></div>
         <div id="dash-ultimas-ventas"></div>
@@ -1426,11 +1447,23 @@ function renderDashboardProj(){
     }
     const zeroLine = minV<0 ? `<line x1="${pL}" y1="${yP(0)}" x2="${W-pR}" y2="${yP(0)}" stroke="#666" stroke-width="1.2" stroke-dasharray="4,3"/>` : '';
     const pts = saldoAcum.map((v,i) => `${xP(i)},${yP(v)}`).join(' L');
-    // Color segments: green above zero, red below
+    // Color segments + dots + value labels every 2-3 points
     let linePath = '';
+    const labelStep = n <= 6 ? 1 : n <= 12 ? 2 : 3;
     for(let i=0;i<n-1;i++){
       const c = saldoAcum[i]<0&&saldoAcum[i+1]<0?'#f06060':saldoAcum[i]>=0&&saldoAcum[i+1]>=0?'#60d098':'#f0b860';
       linePath += `<line x1="${xP(i)}" y1="${yP(saldoAcum[i])}" x2="${xP(i+1)}" y2="${yP(saldoAcum[i+1])}" stroke="${c}" stroke-width="2.8"/>`;
+    }
+    // Dots and value labels on each point
+    for(let i=0;i<n;i++){
+      const v = saldoAcum[i];
+      const col = v<0?'#f06060':'#60d098';
+      const lv = Math.abs(v)>=1000000?'$'+(v/1000000).toFixed(1)+'M':Math.abs(v)>=1000?'$'+(v/1000).toFixed(0)+'k':'$'+Math.round(v);
+      linePath += `<circle cx="${xP(i)}" cy="${yP(v)}" r="3" fill="${col}" stroke="#0f0f0f" stroke-width="1"/>`;
+      if(i%labelStep===0 || i===n-1){
+        const above = i>0 && saldoAcum[i]<=saldoAcum[i-1];
+        linePath += `<text x="${xP(i)}" y="${yP(v)+(above?14:-6)}" text-anchor="${i===0?'start':i===n-1?'end':'middle'}" font-size="8" fill="${col}" font-family="monospace" font-weight="bold">${lv}</text>`;
+      }
     }
     // Injection marker
     let injectMark = '';
@@ -3298,15 +3331,20 @@ function importarVentasExcel(input){
 }NTAS_ANAL = [{"fecha": "2025-11-11", "proyecto": "VILELA 3399", "uf": "501", "tipo": "4 amb", "sup": 114.17, "sup_semi": 26.23, "sup_pond": 140.4, "val_depto": 525000, "cochera": "C5", "val_cochera": 25000, "val_total": 550000, "m2_precio": 3739, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 45, "sexo": "MUJER", "estado_civil": "CASADA", "estado": "VENDIDO", "propietario": "PAULA"}, {"fecha": "2025-11-15", "proyecto": "QUESADA 3050", "uf": "201", "tipo": "4 amb", "sup": 95.14, "sup_semi": 10.44, "sup_pond": 105.58, "val_depto": 368000, "cochera": "C 24", "val_cochera": 25000, "val_total": 393000, "m2_precio": 3486, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 60, "sexo": "MUJER", "estado_civil": "DIVORCIADA", "estado": "VENDIDO", "propietario": "NATALIA"}, {"fecha": "2025-12-01", "proyecto": "QUESADA 3050", "uf": "001.", "tipo": "3 amb", "sup": 69.22, "sup_semi": 27.29, "sup_pond": 96.51, "val_depto": 280000, "cochera": "C15", "val_cochera": 25000, "val_total": 305000, "m2_precio": 2901, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 35, "sexo": "MUJER", "estado_civil": "SOLTERA", "estado": "VENDIDO", "propietario": "ANTONELLA"}, {"fecha": "2026-02-05", "proyecto": "VILELA 3399", "uf": "402", "tipo": "3 amb", "sup": 85.44, "sup_semi": 20.47, "sup_pond": 105.91, "val_depto": 365000, "cochera": "C13", "val_cochera": 25000, "val_total": 390000, "m2_precio": 3446, "cotello": "NO", "canal": "DUEÑOAESTRENAR", "edad": 60, "sexo": "HOMBRE", "estado_civil": "CASADO", "estado": "VENDIDO", "propietario": "CLAUDIO VANZI"}, {"fecha": "2026-02-14", "proyecto": "QUESADA 3050", "uf": "402", "tipo": "4 amb", "sup": 97.54, "sup_semi": 11.6, "sup_pond": 109.14, "val_depto": 385000, "cochera": "C15", "val_cochera": 25000, "val_total": 410000, "m2_precio": 3528, "cotello": "NO", "canal": "ALEJANDRO", "edad": 70, "sexo": "MUJER", "estado_civil": "CASADA", "estado": "VENDIDO", "propietario": ""}, {"fecha": "2026-02-14", "proyecto": "QUESADA II", "uf": "403", "tipo": "3 amb", "sup": 88.76, "sup_semi": 30.9, "sup_pond": 119.66, "val_depto": 315400, "cochera": "c22", "val_cochera": 21600, "val_total": 337000, "m2_precio": 2636, "cotello": "SI", "canal": "INVERSOR", "edad": 45, "sexo": "MUJER", "estado_civil": "", "estado": "VENDIDO", "propietario": "LUPE"}, {"fecha": "2026-02-14", "proyecto": "QUESADA II", "uf": "406", "tipo": "3 amb", "sup": 78.64, "sup_semi": 10.66, "sup_pond": 89.3, "val_depto": 229800, "cochera": "c23", "val_cochera": 21600, "val_total": 251400, "m2_precio": 2573, "cotello": "SI", "canal": "INVERSOR", "edad": 45, "sexo": "MUJER", "estado_civil": "", "estado": "VENDIDO", "propietario": "LUPE"}, {"fecha": "2026-02-14", "proyecto": "QUESADA II", "uf": "601", "tipo": "3 amb", "sup": 96.82, "sup_semi": 32.0, "sup_pond": 128.82, "val_depto": 356400, "cochera": "c43", "val_cochera": 21600, "val_total": 378000, "m2_precio": 2767, "cotello": "SI", "canal": "INVERSOR", "edad": 60, "sexo": "HOMBRE", "estado_civil": "CASADO", "estado": "VENDIDO", "propietario": "WELSH"}, {"fecha": "2026-02-14", "proyecto": "QUESADA II", "uf": "206", "tipo": "3 amb", "sup": 78.64, "sup_semi": 10.66, "sup_pond": 89.3, "val_depto": 230000, "cochera": "", "val_cochera": 0, "val_total": 230000, "m2_precio": 2576, "cotello": "SI", "canal": "OBRA", "edad": null, "sexo": "HOMBRE", "estado_civil": "", "estado": "VENDIDO", "propietario": "Cortes y sistemas"}, {"fecha": "2026-02-26", "proyecto": "QUESADA II", "uf": "504", "tipo": "3 amb", "sup": 94.67, "sup_semi": 30.51, "sup_pond": 125.18, "val_depto": 338400, "cochera": "c44", "val_cochera": 21600, "val_total": 360000, "m2_precio": 2703, "cotello": "SI", "canal": "INVERSOR", "edad": 45, "sexo": "HOMBRE", "estado_civil": "CASADO", "estado": "VENDIDO", "propietario": "FEDERICO CARRERA"}, {"fecha": "2026-03-02", "proyecto": "VILELA 3399", "uf": "302", "tipo": "3 amb", "sup": 85.44, "sup_semi": 20.47, "sup_pond": 105.91, "val_depto": 375000, "cochera": "C9", "val_cochera": 25000, "val_total": 400000, "m2_precio": 3541, "cotello": "NO", "canal": "ES CLIENTE", "edad": 60, "sexo": "MUJER", "estado_civil": "CASADA", "estado": "VENDIDO", "propietario": "ALICIA JAWERBAUM"}, {"fecha": "2026-03-04", "proyecto": "VILELA 3399", "uf": "301", "tipo": "4 amb", "sup": 114.17, "sup_semi": 26.23, "sup_pond": 140.4, "val_depto": 500000, "cochera": "C11", "val_cochera": 25000, "val_total": 525000, "m2_precio": 3561, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 60, "sexo": "MUJER", "estado_civil": "DIVORCIADA", "estado": "VENDIDO", "propietario": "LUISA FABIANO"}, {"fecha": "2026-03-12", "proyecto": "QUESADA II", "uf": "401", "tipo": "3 amb", "sup": 96.82, "sup_semi": 32.0, "sup_pond": 128.82, "val_depto": 305000, "cochera": "c--", "val_cochera": 21600, "val_total": 326600, "m2_precio": 2368, "cotello": "SI", "canal": "INVERSOR", "edad": 35, "sexo": "HOMBRE", "estado_civil": "", "estado": "VENDIDO", "propietario": "SANTIAGO ROQUE"}, {"fecha": "2026-03-12", "proyecto": "QUESADA II", "uf": "804", "tipo": "2 amb", "sup": 51.84, "sup_semi": null, "sup_pond": 61.99, "val_depto": 161400, "cochera": "c--", "val_cochera": 21600, "val_total": 183000, "m2_precio": 2604, "cotello": "SI", "canal": "INVERSOR", "edad": 45, "sexo": "MUJER", "estado_civil": "", "estado": "VENDIDO", "propietario": "LAURA ANDORO"}, {"fecha": "2026-03-12", "proyecto": "QUESADA II", "uf": "606", "tipo": "3 amb", "sup": 78.64, "sup_semi": 10.66, "sup_pond": 89.3, "val_depto": 246400, "cochera": "c--", "val_cochera": 21600, "val_total": 268000, "m2_precio": 2759, "cotello": "SI", "canal": "INVERSOR", "edad": 65, "sexo": "", "estado_civil": "", "estado": "VENDIDO", "propietario": "MIGUEL ARMANDO"}, {"fecha": "2026-03-30", "proyecto": "QUESADA II", "uf": "305", "tipo": "2 amb", "sup": 52.4, "sup_semi": 9.65, "sup_pond": null, "val_depto": 160000, "cochera": "", "val_cochera": 0, "val_total": 160000, "m2_precio": 2579, "cotello": "SI", "canal": "ZONAPROP", "edad": 22, "sexo": "HOMBRE", "estado_civil": "SOLTERO", "estado": "VENDIDO", "propietario": "MATIAS ESOUKOURIAN"}, {"fecha": "2026-04-14", "proyecto": "VILELA 3399", "uf": "401", "tipo": "4 amb", "sup": 114.17, "sup_semi": 26.23, "sup_pond": 140.4, "val_depto": 520000, "cochera": "C5", "val_cochera": 25000, "val_total": 545000, "m2_precio": 3704, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 60, "sexo": "MUJER", "estado_civil": "DIVORCIADA", "estado": "VENDIDO", "propietario": "DEBORA RABINOVICH"}, {"fecha": "2026-04-14", "proyecto": "QUESADA II", "uf": "701", "tipo": "4 amb", "sup": 152.9, "sup_semi": 42.58, "sup_pond": 195.48, "val_depto": 570500, "cochera": "C10yC11", "val_cochera": 50000, "val_total": 620500, "m2_precio": 2918, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 60, "sexo": "HOMBRE", "estado_civil": "DIVORCIADO", "estado": "VENDIDO", "propietario": "LEONARDO ALVAREZ"}, {"fecha": "2026-05-05", "proyecto": "VILELA 3399", "uf": "202", "tipo": "3 amb", "sup": 85.44, "sup_semi": 20.47, "sup_pond": 105.91, "val_depto": 345000, "cochera": "C12", "val_cochera": 25000, "val_total": 370000, "m2_precio": 3257, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 60, "sexo": "MUJER", "estado_civil": "DIVORCIADA", "estado": "VENDIDO", "propietario": "JOSEFINA KAPLAN"}, {"fecha": "2026-05-06", "proyecto": "MELIAN  3899", "uf": "301", "tipo": "3 amb", "sup": 93.5, "sup_semi": 18.87, "sup_pond": 112.37, "val_depto": 315100, "cochera": "C12", "val_cochera": 25000, "val_total": 340100, "m2_precio": 2804, "cotello": "SI", "canal": "REFERIDO", "edad": 55, "sexo": "HOMBRE", "estado_civil": "CASADO", "estado": "VENDIDO", "propietario": "LUIS MARIA COVIELA"}, {"fecha": "2026-05-18", "proyecto": "MELIAN  3899", "uf": "702", "tipo": "4 amb", "sup": 124.7, "sup_semi": 56.26, "sup_pond": 189.2, "val_depto": 645000, "cochera": "C3", "val_cochera": 25000, "val_total": 670000, "m2_precio": 3409, "cotello": "SI", "canal": "COTELLO", "edad": 45, "sexo": "HOMBRE", "estado_civil": "CASADO", "estado": "VENDIDO", "propietario": "FERNANDO PAVE"}, {"fecha": "2026-05-28", "proyecto": "MELIAN  3899", "uf": "401", "tipo": "3 amb", "sup": 93.5, "sup_semi": 18.87, "sup_pond": 112.37, "val_depto": 354100, "cochera": "C13", "val_cochera": 21600, "val_total": 375700, "m2_precio": 3151, "cotello": "SI", "canal": "COTELLO", "edad": 50, "sexo": "MUJER", "estado_civil": "DIVORCIADA", "estado": "VENDIDO", "propietario": "MARIA LESCANO"}, {"fecha": "2026-05-28", "proyecto": "MELIAN  3899", "uf": "503", "tipo": "3 amb", "sup": 75.34, "sup_semi": 18.74, "sup_pond": 94.08, "val_depto": 275200, "cochera": "C12", "val_cochera": 21600, "val_total": 296800, "m2_precio": 2925, "cotello": "SI", "canal": "COTELLO", "edad": 50, "sexo": "MUJER", "estado_civil": "DIVORCIADA", "estado": "VENDIDO", "propietario": "MARIA LESCANO"}, {"fecha": "2026-06-05", "proyecto": "VILELA 3399", "uf": "201", "tipo": "4 amb", "sup": 114.17, "sup_semi": 26.23, "sup_pond": 140.4, "val_depto": 495000, "cochera": "C7", "val_cochera": 25000, "val_total": 520000, "m2_precio": 3526, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 65, "sexo": "HOMBRE", "estado_civil": "CASADO", "estado": "SEÑADO", "propietario": "PABLO"}, {"fecha": "2026-06-08", "proyecto": "MELIAN  3899", "uf": "302", "tipo": "3 amb", "sup": 139.7, "sup_semi": 33.23, "sup_pond": 172.93, "val_depto": 473000, "cochera": "C12", "val_cochera": 21600, "val_total": 494600, "m2_precio": 2735, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 50, "sexo": "HOMBRE", "estado_civil": "", "estado": "SEÑADO", "propietario": "GABRIEL"}, {"fecha": "2026-06-08", "proyecto": "QUESADA II", "uf": "501", "tipo": "3 amb", "sup": 96.82, "sup_semi": 32.0, "sup_pond": 128.82, "val_depto": 339900, "cochera": "c--", "val_cochera": 25600, "val_total": 365500, "m2_precio": 2639, "cotello": "SI", "canal": "COTELLO", "edad": 35, "sexo": "HOMBRE", "estado_civil": "", "estado": "SEÑADO", "propietario": "MATIAS MENICHELLI"}, {"fecha": "2026-06-02", "proyecto": "QUESADA II", "uf": "303", "tipo": "3 amb", "sup": 88.76, "sup_semi": 30.9, "sup_pond": 119.66, "val_depto": 308000, "cochera": "c--", "val_cochera": 21600, "val_total": 329600, "m2_precio": 2574, "cotello": "SI", "canal": "REFERIDO", "edad": 45, "sexo": "HOMBRE", "estado_civil": "", "estado": "SEÑADO", "propietario": "GUIDO"}, {"fecha": "2026-06-05", "proyecto": "QUESADA II", "uf": "605", "tipo": "2 amb", "sup": 52.4, "sup_semi": 9.65, "sup_pond": 62.05, "val_depto": 164400, "cochera": "c--", "val_cochera": 21600, "val_total": 186000, "m2_precio": 2649, "cotello": "SI", "canal": "COTELLO", "edad": 45, "sexo": "MUJER", "estado_civil": "", "estado": "SEÑADO", "propietario": "MATIAS RUBIO"}, {"fecha": "2026-06-05", "proyecto": "QUESADA II", "uf": "604", "tipo": "3 amb", "sup": 94.67, "sup_semi": 30.51, "sup_pond": 125.18, "val_depto": 355000, "cochera": "c--", "val_cochera": 21600, "val_total": 376600, "m2_precio": 2836, "cotello": "SI", "canal": "DUEÑOAESTRENAR", "edad": 55, "sexo": "MUJER", "estado_civil": "", "estado": "SEÑADO", "propietario": "LUJAN"}, {"fecha": "2026-06-05", "proyecto": "QUESADA II", "uf": "405", "tipo": "2 amb", "sup": 52.4, "sup_semi": 9.65, "sup_pond": 62.05, "val_depto": 170000, "cochera": "c--", "val_cochera": 0, "val_total": 170000, "m2_precio": 2740, "cotello": "SI", "canal": "INVERSOR", "edad": 55, "sexo": "MUJER", "estado_civil": "", "estado": "SEÑADO", "propietario": "GABY FISH"}];
 
 // ─── VENTAS ANÁLISIS ─────────────────────────────────────────────────────────
-let VENTAS_ANAL=[{"fecha":"2025-02-05","proyecto":"MELIAN 3899","uf":"602","tipo":"4 amb","sup":182,"sup_semi":null,"sup_pond":239,"val_depto":725000,"cochera":"C12","val_cochera":40000,"val_total":765000,"m2_precio":3033,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":45,"sexo":"MUJER","estado_civil":"CASADO","estado":"VENDIDO","propietario":"ANA Y PILAR"},{"fecha":"2025-06-15","proyecto":"QUESADA 3050","uf":"701","tipo":"4 amb","sup":95.14,"sup_semi":10.44,"sup_pond":105.58,"val_depto":390000,"cochera":"C 24","val_cochera":25000,"val_total":415000,"m2_precio":3694,"cotello":"SI","canal":"INMOBILIARIA","edad":40,"sexo":"MUJER","estado_civil":"SOLTERA","estado":"VENDIDO","propietario":"MARIEL"},{"fecha":"2025-08-26","proyecto":"MELIAN 3899","uf":"701","tipo":"3 amb","sup":79,"sup_semi":13,"sup_pond":112.4,"val_depto":475000,"cochera":"C12","val_cochera":25000,"val_total":500000,"m2_precio":4226,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"VERNETTI"},{"fecha":"2025-11-11","proyecto":"VILELA 3399","uf":"501","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":525000,"cochera":"C5","val_cochera":25000,"val_total":550000,"m2_precio":3739,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":45,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"PAULA"},{"fecha":"2025-11-15","proyecto":"QUESADA 3050","uf":"201","tipo":"4 amb","sup":95.14,"sup_semi":10.44,"sup_pond":105.58,"val_depto":368000,"cochera":"C 24","val_cochera":25000,"val_total":393000,"m2_precio":3486,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"NATALIA"},{"fecha":"2025-11-15","proyecto":"QUESADA 3050","uf":"101","tipo":"4 amb","sup":95.14,"sup_semi":10.44,"sup_pond":105.58,"val_depto":340000,"cochera":"C 24","val_cochera":25000,"val_total":365000,"m2_precio":3220,"cotello":"SI","canal":"ZONAPROP","edad":60,"sexo":"MUJER","estado_civil":"CASADO","estado":"VENDIDO","propietario":"VICTORIA"},{"fecha":"2025-12-01","proyecto":"QUESADA 3050","uf":"001.","tipo":"3 amb","sup":69.22,"sup_semi":27.29,"sup_pond":96.51,"val_depto":280000,"cochera":"C15","val_cochera":25000,"val_total":305000,"m2_precio":2901,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":35,"sexo":"MUJER","estado_civil":"SOLTERA","estado":"VENDIDO","propietario":"ANTONELLA"},{"fecha":"2026-02-05","proyecto":"VILELA 3399","uf":"402","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":365000,"cochera":"C13","val_cochera":25000,"val_total":390000,"m2_precio":3446,"cotello":"NO","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"CLAUDIO VANZI"},{"fecha":"2026-02-14","proyecto":"QUESADA 3050","uf":"402","tipo":"4 amb","sup":97.54,"sup_semi":11.6,"sup_pond":109.14,"val_depto":385000,"cochera":"C15","val_cochera":25000,"val_total":410000,"m2_precio":3528,"cotello":"NO","canal":"ALEJANDRO","edad":70,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":""},{"fecha":"2026-02-14","proyecto":"Q2","uf":"403","tipo":"3 amb","sup":88.76,"sup_semi":30.9,"sup_pond":119.66,"val_depto":315400,"cochera":"c22","val_cochera":21600,"val_total":337000,"m2_precio":2636,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"LUPE"},{"fecha":"2026-02-14","proyecto":"Q2","uf":"406","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":229800,"cochera":"c23","val_cochera":21600,"val_total":251400,"m2_precio":2573,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"LUPE"},{"fecha":"2026-02-14","proyecto":"Q2","uf":"601","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":356400,"cochera":"c43","val_cochera":21600,"val_total":378000,"m2_precio":2767,"cotello":"SI","canal":"INVERSOR","edad":60,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"WELSH"},{"fecha":"2026-02-14","proyecto":"Q2","uf":"206","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":230000,"cochera":"","val_cochera":0,"val_total":230000,"m2_precio":2576,"cotello":"SI","canal":"OBRA","edad":null,"sexo":"HOMBRE","estado_civil":"","estado":"VENDIDO","propietario":"Cortes y sistemas"},{"fecha":"2026-02-26","proyecto":"Q2","uf":"504","tipo":"3 amb","sup":94.67,"sup_semi":30.51,"sup_pond":125.18,"val_depto":338400,"cochera":"c44","val_cochera":21600,"val_total":360000,"m2_precio":2703,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"FEDERICO CARRERA"},{"fecha":"2026-03-02","proyecto":"VILELA 3399","uf":"302","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":375000,"cochera":"C9","val_cochera":25000,"val_total":400000,"m2_precio":3541,"cotello":"NO","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"ALICIA JAWERBAUM"},{"fecha":"2026-03-04","proyecto":"VILELA 3399","uf":"301","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":500000,"cochera":"C11","val_cochera":25000,"val_total":525000,"m2_precio":3561,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"LUISA FABIANO"},{"fecha":"2026-03-12","proyecto":"Q2","uf":"401","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":305000,"cochera":"c--","val_cochera":21600,"val_total":326600,"m2_precio":2368,"cotello":"SI","canal":"INVERSOR","edad":35,"sexo":"HOMBRE","estado_civil":"SOLTERO","estado":"VENDIDO","propietario":"SANTIAGO ROQUE"},{"fecha":"2026-03-12","proyecto":"Q2","uf":"804","tipo":"2 amb","sup":51.84,"sup_semi":null,"sup_pond":61.99,"val_depto":161400,"cochera":"c--","val_cochera":21600,"val_total":183000,"m2_precio":2604,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"LAURA ANDORO"},{"fecha":"2026-03-12","proyecto":"Q2","uf":"606","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":246400,"cochera":"c--","val_cochera":21600,"val_total":268000,"m2_precio":2759,"cotello":"SI","canal":"INVERSOR","edad":65,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"MIGUEL ARMANDO"},{"fecha":"2026-03-30","proyecto":"Q2","uf":"305","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":160000,"cochera":"","val_cochera":0,"val_total":160000,"m2_precio":2579,"cotello":"SI","canal":"ZONAPROP","edad":22,"sexo":"HOMBRE","estado_civil":"SOLTERO","estado":"VENDIDO","propietario":"MATIAS ESOUKOURIAN"},{"fecha":"2026-04-14","proyecto":"VILELA 3399","uf":"401","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":520000,"cochera":"C5","val_cochera":25000,"val_total":545000,"m2_precio":3704,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"DEBORA RABINOVICH"},{"fecha":"2026-04-14","proyecto":"Q2","uf":"701","tipo":"4 amb","sup":152.9,"sup_semi":42.58,"sup_pond":195.48,"val_depto":570500,"cochera":"C10yC11","val_cochera":50000,"val_total":620500,"m2_precio":2918,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"HOMBRE","estado_civil":"DIVORCIADO","estado":"VENDIDO","propietario":"LEONARDO ALVAREZ"},{"fecha":"2026-05-05","proyecto":"VILELA 3399","uf":"202","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":345000,"cochera":"C12","val_cochera":25000,"val_total":370000,"m2_precio":3257,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"JOSEFINA KAPLAN"},{"fecha":"2026-05-06","proyecto":"MELIAN 3899","uf":"301","tipo":"3 amb","sup":93.5,"sup_semi":18.87,"sup_pond":112.37,"val_depto":315100,"cochera":"C12","val_cochera":25000,"val_total":340100,"m2_precio":2804,"cotello":"SI","canal":"REFERIDO","edad":55,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"LUIS MARIA COVIELA"},{"fecha":"2026-05-18","proyecto":"MELIAN 3899","uf":"702","tipo":"4 amb","sup":124.7,"sup_semi":56.26,"sup_pond":189.2,"val_depto":645000,"cochera":"C3","val_cochera":25000,"val_total":670000,"m2_precio":3409,"cotello":"SI","canal":"COTELLO","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"FERNANDO PAVE"},{"fecha":"2026-05-28","proyecto":"MELIAN 3899","uf":"401","tipo":"3 amb","sup":93.5,"sup_semi":18.87,"sup_pond":112.37,"val_depto":354100,"cochera":"C13","val_cochera":21600,"val_total":375700,"m2_precio":3151,"cotello":"SI","canal":"COTELLO","edad":50,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"MARIA LESCANO"},{"fecha":"2026-05-28","proyecto":"MELIAN 3899","uf":"503","tipo":"3 amb","sup":75.34,"sup_semi":18.74,"sup_pond":94.08,"val_depto":275200,"cochera":"C12","val_cochera":21600,"val_total":296800,"m2_precio":2925,"cotello":"SI","canal":"COTELLO","edad":50,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"MARIA LESCANO"},{"fecha":"2026-06-08","proyecto":"MELIAN 3899","uf":"302","tipo":"3 amb","sup":139.7,"sup_semi":33.23,"sup_pond":172.93,"val_depto":473000,"cochera":"C12","val_cochera":21600,"val_total":494600,"m2_precio":2735,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":50,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"SEÑADO","propietario":"GABRIEL BONTOMASSI"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"501","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":339900,"cochera":"c--","val_cochera":25600,"val_total":365500,"m2_precio":2639,"cotello":"SI","canal":"COTELLO","edad":35,"sexo":"HOMBRE","estado_civil":"SOLTERO","estado":"SEÑADO","propietario":"MATIAS MENICHELLI"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"605","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":164400,"cochera":"c--","val_cochera":21600,"val_total":186000,"m2_precio":2649,"cotello":"SI","canal":"COTELLO","edad":45,"sexo":"MUJER","estado_civil":"CASADO","estado":"SEÑADO","propietario":"MATIAS RUBIO"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"604","tipo":"3 amb","sup":94.67,"sup_semi":30.51,"sup_pond":125.18,"val_depto":355000,"cochera":"c--","val_cochera":21600,"val_total":376600,"m2_precio":2836,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":55,"sexo":"MUJER","estado_civil":"CASADO","estado":"SEÑADO","propietario":"LUJAN"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"405","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":170000,"cochera":"c--","val_cochera":0,"val_total":170000,"m2_precio":2740,"cotello":"SI","canal":"INVERSOR","edad":55,"sexo":"MUJER","estado_civil":"SOLTERA","estado":"SEÑADO","propietario":"GABY FISCH"},{"fecha":"2026-06-10","proyecto":"VILELA 3399","uf":"201","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":495000,"cochera":"C7","val_cochera":25000,"val_total":520000,"m2_precio":3526,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":65,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"SEÑADO","propietario":"PABLO"}];
+let VENTAS_ANAL=[{"fecha":"2025-11-11","proyecto":"VILELA 3399","uf":"501","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":525000,"cochera":"C5","val_cochera":25000,"val_total":550000,"m2_precio":3739,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":45,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"PAULA"},{"fecha":"2025-11-15","proyecto":"QUESADA 3050","uf":"201","tipo":"4 amb","sup":95.14,"sup_semi":10.44,"sup_pond":105.58,"val_depto":368000,"cochera":"C 24","val_cochera":25000,"val_total":393000,"m2_precio":3486,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"NATALIA"},{"fecha":"2025-12-01","proyecto":"QUESADA 3050","uf":"001.","tipo":"3 amb","sup":69.22,"sup_semi":27.29,"sup_pond":96.51,"val_depto":280000,"cochera":"C15","val_cochera":25000,"val_total":305000,"m2_precio":2901,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":35,"sexo":"MUJER","estado_civil":"SOLTERA","estado":"VENDIDO","propietario":"ANTONELLA"},{"fecha":"2026-02-05","proyecto":"VILELA 3399","uf":"402","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":365000,"cochera":"C13","val_cochera":25000,"val_total":390000,"m2_precio":3446,"cotello":"NO","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"CLAUDIO VANZI"},{"fecha":"2026-02-14","proyecto":"QUESADA 3050","uf":"402","tipo":"4 amb","sup":97.54,"sup_semi":11.6,"sup_pond":109.14,"val_depto":385000,"cochera":"C15","val_cochera":25000,"val_total":410000,"m2_precio":3528,"cotello":"NO","canal":"ALEJANDRO","edad":70,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":""},{"fecha":"2026-02-14","proyecto":"Q2","uf":"403","tipo":"3 amb","sup":88.76,"sup_semi":30.9,"sup_pond":119.66,"val_depto":315400,"cochera":"c22","val_cochera":21600,"val_total":337000,"m2_precio":2636,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"","estado":"VENDIDO","propietario":"LUPE"},{"fecha":"2026-02-14","proyecto":"Q2","uf":"406","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":229800,"cochera":"c23","val_cochera":21600,"val_total":251400,"m2_precio":2573,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"","estado":"VENDIDO","propietario":"LUPE"},{"fecha":"2026-02-14","proyecto":"Q2","uf":"601","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":356400,"cochera":"c43","val_cochera":21600,"val_total":378000,"m2_precio":2767,"cotello":"SI","canal":"INVERSOR","edad":60,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"WELSH"},{"fecha":"2026-02-14","proyecto":"Q2","uf":"206","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":230000,"cochera":"","val_cochera":0,"val_total":230000,"m2_precio":2576,"cotello":"SI","canal":"OBRA","edad":null,"sexo":"HOMBRE","estado_civil":"","estado":"VENDIDO","propietario":"Cortes y sistemas"},{"fecha":"2026-02-26","proyecto":"Q2","uf":"504","tipo":"3 amb","sup":94.67,"sup_semi":30.51,"sup_pond":125.18,"val_depto":338400,"cochera":"c44","val_cochera":21600,"val_total":360000,"m2_precio":2703,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"FEDERICO CARRERA"},{"fecha":"2026-03-02","proyecto":"VILELA 3399","uf":"302","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":375000,"cochera":"C9","val_cochera":25000,"val_total":400000,"m2_precio":3541,"cotello":"NO","canal":"ES CLIENTE","edad":60,"sexo":"MUJER","estado_civil":"CASADA","estado":"VENDIDO","propietario":"ALICIA JAWERBAUM"},{"fecha":"2026-03-04","proyecto":"VILELA 3399","uf":"301","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":500000,"cochera":"C11","val_cochera":25000,"val_total":525000,"m2_precio":3561,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"LUISA FABIANO"},{"fecha":"2026-03-12","proyecto":"Q2","uf":"401","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":305000,"cochera":"c--","val_cochera":21600,"val_total":326600,"m2_precio":2368,"cotello":"SI","canal":"INVERSOR","edad":35,"sexo":"HOMBRE","estado_civil":"","estado":"VENDIDO","propietario":"SANTIAGO ROQUE"},{"fecha":"2026-03-12","proyecto":"Q2","uf":"804","tipo":"2 amb","sup":51.84,"sup_semi":null,"sup_pond":61.99,"val_depto":161400,"cochera":"c--","val_cochera":21600,"val_total":183000,"m2_precio":2604,"cotello":"SI","canal":"INVERSOR","edad":45,"sexo":"MUJER","estado_civil":"","estado":"VENDIDO","propietario":"LAURA ANDORO"},{"fecha":"2026-03-12","proyecto":"Q2","uf":"606","tipo":"3 amb","sup":78.64,"sup_semi":10.66,"sup_pond":89.3,"val_depto":246400,"cochera":"c--","val_cochera":21600,"val_total":268000,"m2_precio":2759,"cotello":"SI","canal":"INVERSOR","edad":65,"sexo":"","estado_civil":"","estado":"VENDIDO","propietario":"MIGUEL ARMANDO"},{"fecha":"2026-03-30","proyecto":"Q2","uf":"305","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":null,"val_depto":160000,"cochera":"","val_cochera":0,"val_total":160000,"m2_precio":2579,"cotello":"SI","canal":"ZONAPROP","edad":22,"sexo":"HOMBRE","estado_civil":"SOLTERO","estado":"VENDIDO","propietario":"MATIAS ESOUKOURIAN"},{"fecha":"2026-04-14","proyecto":"VILELA 3399","uf":"401","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":520000,"cochera":"C5","val_cochera":25000,"val_total":545000,"m2_precio":3704,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"DEBORA RABINOVICH"},{"fecha":"2026-04-14","proyecto":"Q2","uf":"701","tipo":"4 amb","sup":152.9,"sup_semi":42.58,"sup_pond":195.48,"val_depto":570500,"cochera":"C10yC11","val_cochera":50000,"val_total":620500,"m2_precio":2918,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"HOMBRE","estado_civil":"DIVORCIADO","estado":"VENDIDO","propietario":"LEONARDO ALVAREZ"},{"fecha":"2026-05-05","proyecto":"VILELA 3399","uf":"202","tipo":"3 amb","sup":85.44,"sup_semi":20.47,"sup_pond":105.91,"val_depto":345000,"cochera":"C12","val_cochera":25000,"val_total":370000,"m2_precio":3257,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":60,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"JOSEFINA KAPLAN"},{"fecha":"2026-05-06","proyecto":"MELIAN  3899","uf":"301","tipo":"3 amb","sup":93.5,"sup_semi":18.87,"sup_pond":112.37,"val_depto":315100,"cochera":"C12","val_cochera":25000,"val_total":340100,"m2_precio":2804,"cotello":"SI","canal":"REFERIDO","edad":55,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"LUIS MARIA COVIELA"},{"fecha":"2026-05-18","proyecto":"MELIAN  3899","uf":"702","tipo":"4 amb","sup":124.7,"sup_semi":56.26,"sup_pond":189.2,"val_depto":645000,"cochera":"C3","val_cochera":25000,"val_total":670000,"m2_precio":3409,"cotello":"SI","canal":"COTELLO","edad":45,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"VENDIDO","propietario":"FERNANDO PAVE"},{"fecha":"2026-05-28","proyecto":"MELIAN  3899","uf":"401","tipo":"3 amb","sup":93.5,"sup_semi":18.87,"sup_pond":112.37,"val_depto":354100,"cochera":"C13","val_cochera":21600,"val_total":375700,"m2_precio":3151,"cotello":"SI","canal":"COTELLO","edad":50,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"MARIA LESCANO"},{"fecha":"2026-05-28","proyecto":"MELIAN  3899","uf":"503","tipo":"3 amb","sup":75.34,"sup_semi":18.74,"sup_pond":94.08,"val_depto":275200,"cochera":"C12","val_cochera":21600,"val_total":296800,"m2_precio":2925,"cotello":"SI","canal":"COTELLO","edad":50,"sexo":"MUJER","estado_civil":"DIVORCIADA","estado":"VENDIDO","propietario":"MARIA LESCANO"},{"fecha":"2026-06-10","proyecto":"VILELA 3399","uf":"201","tipo":"4 amb","sup":114.17,"sup_semi":26.23,"sup_pond":140.4,"val_depto":495000,"cochera":"C7","val_cochera":25000,"val_total":520000,"m2_precio":3526,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":65,"sexo":"HOMBRE","estado_civil":"CASADO","estado":"SEÑADO","propietario":"PABLO"},{"fecha":"2026-06-08","proyecto":"MELIAN  3899","uf":"302","tipo":"3 amb","sup":139.7,"sup_semi":33.23,"sup_pond":172.93,"val_depto":473000,"cochera":"C12","val_cochera":21600,"val_total":494600,"m2_precio":2735,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":50,"sexo":"HOMBRE","estado_civil":"","estado":"SEÑADO","propietario":"GABRIEL BONTOMASSI"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"501","tipo":"3 amb","sup":96.82,"sup_semi":32,"sup_pond":128.82,"val_depto":339900,"cochera":"c--","val_cochera":25600,"val_total":365500,"m2_precio":2639,"cotello":"SI","canal":"COTELLO","edad":35,"sexo":"HOMBRE","estado_civil":"","estado":"SEÑADO","propietario":"MATIAS MENICHELLI"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"605","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":164400,"cochera":"c--","val_cochera":21600,"val_total":186000,"m2_precio":2649,"cotello":"SI","canal":"COTELLO","edad":45,"sexo":"MUJER","estado_civil":"","estado":"SEÑADO","propietario":"MATIAS RUBIO"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"604","tipo":"3 amb","sup":94.67,"sup_semi":30.51,"sup_pond":125.18,"val_depto":355000,"cochera":"c--","val_cochera":21600,"val_total":376600,"m2_precio":2836,"cotello":"SI","canal":"DUEÑOAESTRENAR","edad":55,"sexo":"MUJER","estado_civil":"","estado":"SEÑADO","propietario":"LUJAN"},{"fecha":"2026-06-08","proyecto":"Q2","uf":"405","tipo":"2 amb","sup":52.4,"sup_semi":9.65,"sup_pond":62.05,"val_depto":170000,"cochera":"c--","val_cochera":0,"val_total":170000,"m2_precio":2740,"cotello":"SI","canal":"INVERSOR","edad":55,"sexo":"MUJER","estado_civil":"","estado":"SEÑADO","propietario":"GABY FISH"}];
 
 // ─── VENTAS ANÁLISIS ─────────────────────────────────────────────────────────
 let vaFiltro = '';
+let vaFiltroMeses = 0; // 0=todo, 1,3,6,12
 let vaSortCol = '';
-let vaSortDir = 1; // 1=asc, -1=desc
+let vaSortDir = 1;
 
 function setVaFiltro(p){
   vaFiltro = p;
+  renderVentasAnal();
+}
+function setVaMeses(n){
+  vaFiltroMeses = n;
   renderVentasAnal();
 }
 
@@ -3320,7 +3358,13 @@ function renderVentasAnal(){
   const el = document.getElementById('vental-content');
   if(!el) return;
 
-  const rows = vaFiltro ? VENTAS_ANAL.filter(v=>v.proyecto===vaFiltro) : VENTAS_ANAL;
+  // Aplicar filtro período
+  const allMesesVA = [...new Set(VENTAS_ANAL.map(v=>v.fecha.slice(0,7)))].sort();
+  const mesesVAFilt = vaFiltroMeses > 0 ? allMesesVA.slice(-vaFiltroMeses) : allMesesVA;
+  const baseRows = vaFiltro ? VENTAS_ANAL.filter(v=>v.proyecto===vaFiltro) : VENTAS_ANAL;
+  const rows = mesesVAFilt.length < allMesesVA.length
+    ? baseRows.filter(v=>mesesVAFilt.includes(v.fecha.slice(0,7)))
+    : baseRows;
   const proyectos = [...new Set(VENTAS_ANAL.map(v=>v.proyecto))].sort();
 
   // ── KPIs
@@ -3355,17 +3399,24 @@ function renderVentasAnal(){
   const maxMn   = Math.max(...mesKeys.map(m=>mesCnt[m].n), 1);
   const bW      = mesKeys.length > 0 ? Math.min(48, Math.floor(560/mesKeys.length)) : 40;
 
-  // ── SVG bar chart por mes
+  // ── SVG bar chart por mes (doble: ops + monto)
+  const maxTotal = Math.max(...mesKeys.map(m=>mesCnt[m].total), 1);
   const svgW = Math.max(200, mesKeys.length*(bW+6)+20);
   const barsSvg = mesKeys.map((m,i)=>{
     const d = mesCnt[m];
-    const h = Math.max(4, Math.round(d.n/maxMn*60));
+    const hOps   = Math.max(3, Math.round(d.n/maxMn*50));
+    const hMonto = Math.max(3, Math.round(d.total/maxTotal*50));
     const x = 10 + i*(bW+6);
-    const y = 72 - h;
+    const bw2 = Math.max(4, Math.floor((bW-3)/2));
+    const yOps   = 62 - hOps;
+    const yMonto = 62 - hMonto;
     const lbl = MESES[parseInt(m.split('-')[1])-1]+"'"+m.slice(2,4);
-    return `<rect x="${x}" y="${y}" width="${bW}" height="${h}" fill="#c8f060" opacity="0.85" rx="2"/>
-<text x="${x+bW/2}" y="${y-4}" text-anchor="middle" font-size="10" fill="#c8f060" font-family="monospace">${d.n}</text>
-<text x="${x+bW/2}" y="90" text-anchor="middle" font-size="8" fill="#999" font-family="monospace">${lbl}</text>`;
+    const montoLbl = d.total>=1000000?'$'+(d.total/1000000).toFixed(1)+'M':d.total>=1000?'$'+(d.total/1000).toFixed(0)+'k':'$'+d.total;
+    return `<rect x="${x}" y="${yOps}" width="${bw2}" height="${hOps}" fill="#c8f060" opacity="0.85" rx="1"/>
+<rect x="${x+bw2+2}" y="${yMonto}" width="${bw2}" height="${hMonto}" fill="#60b4f0" opacity="0.75" rx="1"/>
+<text x="${x}" y="${yOps-4}" text-anchor="start" font-size="8" fill="#c8f060" font-family="monospace">${d.n}</text>
+<text x="${x+bw2+2+bw2}" y="${yMonto-4}" text-anchor="end" font-size="8" fill="#60b4f0" font-family="monospace">${montoLbl}</text>
+<text x="${x+bW/2}" y="76" text-anchor="middle" font-size="7.5" fill="#888" font-family="monospace">${lbl}</text>`;
   }).join('');
 
   // ── Por proyecto: m2 stats
@@ -3408,26 +3459,21 @@ function renderVentasAnal(){
 
   // ── Render
   el.innerHTML = `
-<!-- Filtro proyecto -->
-<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+<!-- Filtros -->
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap">
   <span style="font-size:12px;color:var(--muted);font-weight:500">Proyecto:</span>
-  <button onclick="setVaFiltro('')" style="
-    padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;
-    border:2px solid ${vaFiltro===''?'#c8f060':'#444'};
-    background:${vaFiltro===''?'#c8f060':'transparent'};
-    color:${vaFiltro===''?'#0f0f0f':'#aaa'};transition:all .15s">Todos</button>
+  <button onclick="setVaFiltro('')" style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid ${vaFiltro===''?'#c8f060':'#444'};background:${vaFiltro===''?'#c8f060':'transparent'};color:${vaFiltro===''?'#0f0f0f':'#aaa'};transition:all .15s">Todos</button>
   ${proyectos.map(p=>{
-    const col = PROY_COLORS[p]||'#60d098';
-    const on = vaFiltro===p;
-    return `<button onclick="setVaFiltro('${p}')" style="
-      padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;
-      border:2px solid ${col};
-      background:${on?col:'transparent'};
-      color:${on?'#0f0f0f':col};
-      box-shadow:${on?'0 0 10px '+col+'55':'none'};
-      transition:all .15s">${p}</button>`;
+    const col=PROY_COLORS[p]||'#60d098',on=vaFiltro===p;
+    return `<button onclick="setVaFiltro('${p}')" style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid ${col};background:${on?col:'transparent'};color:${on?'#0f0f0f':col};box-shadow:${on?'0 0 10px '+col+'55':'none'};transition:all .15s">${p}</button>`;
   }).join('')}
-  <span style="font-size:11px;color:var(--muted);margin-left:6px">${n} operaciones</span>
+  <span style="width:1px;height:20px;background:var(--border);margin:0 4px"></span>
+  <span style="font-size:12px;color:var(--muted);font-weight:500">Período:</span>
+  ${[[0,'Todo'],[1,'Último mes'],[3,'3 meses'],[6,'6 meses'],[12,'1 año']].map(([v,lbl])=>{
+    const on=vaFiltroMeses===v;
+    return `<button onclick="setVaMeses(${v})" style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid ${on?'#c8f060':'#444'};background:${on?'#c8f060':'transparent'};color:${on?'#0f0f0f':'#aaa'};transition:all .15s">${lbl}</button>`;
+  }).join('')}
+  <span style="font-size:11px;color:var(--muted);margin-left:4px">${n} operaciones</span>
 </div>
 
 <!-- KPIs -->
@@ -3616,7 +3662,7 @@ function renderComercial(){
 
   const canales    = [...new Set(COMERCIAL_DATA.map(d=>d.canal))].sort();
   const allMeses   = [...new Set(COMERCIAL_DATA.map(d=>d.mes))].sort();
-  const CANAL_COLORS = {'DUEÑO':'#60b4f0','COTELLO':'#c8f060'};
+  const CANAL_COLORS = {'DUEÑO':'#60b4f0','COTELLO':'#f0a060'};
   const filtC      = comFiltroCanal;
   const showCanales = filtC ? [filtC] : canales;
 
@@ -3688,7 +3734,14 @@ function renderComercial(){
         if(s.vals[i]!=null&&s.vals[i+1]!=null&&(s.vals[i]>0||s.vals[i+1]>0))
           segs+=`<line x1="${xP(i)}" y1="${yP(s.vals[i]||0)}" x2="${xP(i+1)}" y2="${yP(s.vals[i+1]||0)}" stroke="${s.color}" stroke-width="2.2"/>`;
       }
-      const dots=s.vals.map((v,i)=>v!=null&&v>0?`<circle cx="${xP(i)}" cy="${yP(v)}" r="3" fill="${s.color}" stroke="#0f0f0f" stroke-width="1.2"/>`:'').join('');
+      const dots=s.vals.map((v,i)=>{
+        if(v==null||v<=0) return '';
+        const lv = v>=1000000?'$'+(v/1000000).toFixed(1)+'M':v>=1000?'$'+(v/1000).toFixed(0)+'k':String(Math.round(v));
+        const tx = xP(i), ty = yP(v);
+        // stagger label above/below to avoid overlap when multiple series
+        const labelY = ty - 6;
+        return `<circle cx="${tx}" cy="${ty}" r="3" fill="${s.color}" stroke="#0f0f0f" stroke-width="1.2"/><text x="${tx}" y="${labelY}" text-anchor="middle" font-size="7.5" fill="${s.color}" font-family="monospace" font-weight="bold">${lv}</text>`;
+      }).join('');
       return segs+dots;
     }).join('');
     return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:${H}px;display:block">${grid}${lines}${xlbls}</svg>`;
@@ -3961,6 +4014,7 @@ function importarComercialExcel(input){
 
 
 // ─── INIT
+initTheme();
 updateBadges();
 renderDashboard();
 </script>
