@@ -778,18 +778,21 @@ function renderDevZonif() {
 function renderDevFactibilidad() {
 
   // Per-barrio: precio venta usado ZP (publicacion) + zonificacion ref
+  // pventa = precio de pozo ZP por barrio (lo que vas a vender vos)
+  // Palermo/Belgrano/Nunez/Recoleta/Colegiales: dato propio ZP
+  // Resto: promedio CABA pozo ZP may25 (US$2.893) — marcado con (*)
   var barData = [
-    {n:"Palermo",      pventa:3035, zonif:"USAA/USAM"},
-    {n:"Belgrano",     pventa:2806, zonif:"USAA"},
-    {n:"Belgrano R",   pventa:2950, zonif:"USAA"},
-    {n:"Nunez",        pventa:2889, zonif:"USAA/USAM"},
-    {n:"Recoleta",     pventa:2613, zonif:"USAA/USAM"},
-    {n:"Colegiales",   pventa:2628, zonif:"USAM"},
-    {n:"Saavedra",     pventa:1991, zonif:"USAB/USAM"},
-    {n:"Villa Urquiza",pventa:2577, zonif:"USAM"},
-    {n:"Villa Crespo", pventa:2085, zonif:"USAM/USAA"},
-    {n:"Chacarita",    pventa:2136, zonif:"USAM"},
-    {n:"Almagro",      pventa:1996, zonif:"USAM"},
+    {n:"Palermo",      pventa:3709, zonif:"USAA/USAM",  pzOk:true},
+    {n:"Belgrano",     pventa:3357, zonif:"USAA",        pzOk:true},
+    {n:"Belgrano R",   pventa:3500, zonif:"USAA",        pzOk:false},
+    {n:"Nunez",        pventa:3461, zonif:"USAA/USAM",  pzOk:true},
+    {n:"Recoleta",     pventa:2544, zonif:"USAA/USAM",  pzOk:true},
+    {n:"Colegiales",   pventa:3125, zonif:"USAM",        pzOk:true},
+    {n:"Saavedra",     pventa:2893, zonif:"USAB/USAM",  pzOk:false},
+    {n:"Villa Urquiza",pventa:2893, zonif:"USAM",        pzOk:false},
+    {n:"Villa Crespo", pventa:2893, zonif:"USAM/USAA",  pzOk:false},
+    {n:"Chacarita",    pventa:2893, zonif:"USAM",        pzOk:false},
+    {n:"Almagro",      pventa:2893, zonif:"USAM",        pzOk:false},
   ];
 
   // State
@@ -817,7 +820,7 @@ function renderDevFactibilidad() {
 
   // Barrio selector
   var opts = barData.map(function(b){
-    return '<option value="'+b.n+'"'+(b.n===fc.barrio?' selected':'')+'>'+b.n+' — US$'+fmt(b.pventa)+'/m2'+'</option>';
+    return '<option value="'+b.n+'"'+(b.n===fc.barrio?' selected':'')+'>'+b.n+' — US$'+fmt(b.pventa)+'/m2'+(b.pzOk?'':' (*)')+'</option>';
   }).join('');
 
   // Comparison: same params, different barrio price
@@ -858,7 +861,7 @@ function renderDevFactibilidad() {
         +'<div class="fc-field">'
           +'<label class="fc-label">Barrio objetivo</label>'
           +'<select class="fc-sel" onchange="fcSet(\'barrio\',this.value)">'+opts+'</select>'
-          +'<div class="fc-hint">Precio venta usado ZP · cambia el ingreso del proyecto</div>'
+          +'<div class="fc-hint">Precio venta en pozo ZP · ' + (bd.pzOk ? 'dato por barrio ZP' : 'promedio CABA (*) ZP may25') + '</div>'
         +'</div>'
 
         +'<div class="fc-field">'
@@ -947,7 +950,7 @@ function renderDevFactibilidad() {
     +'<div class="ptable-wrap"><table class="ptable">'
       +'<thead><tr>'
         +'<th class="pth-b">Barrio</th>'
-        +'<th class="pth">Precio venta ZP</th>'
+        +'<th class="pth">Precio pozo ZP</th>'
         +'<th class="pth">Ingreso total</th>'
         +'<th class="pth">Margen %</th>'
         +'<th class="pth">Utilidad neta</th>'
@@ -955,7 +958,7 @@ function renderDevFactibilidad() {
       +'<tbody>'+compRows+'</tbody>'
     +'</table></div>'
 
-    +'<div class="note">Precio de venta = usado ZP publicado en '+bd.n+' (cierre real ~5-7% menor). Costo construccion ref. Camara 2025. Gastos estimados. No constituye asesoramiento financiero.</div>';
+    +'<div class="note">Precio de venta = pozo ZP publicado en '+bd.n+' (cierre real ~5-7% menor). Costo construccion ref. Camara 2025. Gastos estimados. No constituye asesoramiento financiero.</div>';
 }
 
 function fcSet(key, val) {
