@@ -217,7 +217,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.5);}.sm{opacity:.7}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">24/06/2026 09:42 a. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">24/06/2026 10:06 a. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -259,6 +259,11 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
     Otros ingresos
     <span class="nav-badge" id="nb-otroing">0</span>
+  </button>
+  <button class="nav-item" onclick="nav('locales')" id="nav-locales">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><line x1="9" y1="9" x2="9" y2="9"/><line x1="9" y1="13" x2="9" y2="13"/><line x1="9" y1="17" x2="9" y2="17"/></svg>
+    Locales
+    <span class="nav-badge" id="nb-locales">0</span>
   </button>
   <button class="nav-item" onclick="nav('caja')" id="nav-caja">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
@@ -432,6 +437,12 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
       <div id="lista-stock"></div>
     </div>
 
+    <!-- LOCALES -->
+    <div class="panel" id="panel-locales">
+      <div style="margin-bottom:14px;font-size:13px;color:var(--muted)">Locales comerciales — alquileres y valor de mercado estimado (alquiler anual = 5% del valor de la propiedad)</div>
+      <div id="locales-content"></div>
+    </div>
+
     <!-- EGRESOS -->
     <div class="panel" id="panel-egresos">
       <div style="display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap">
@@ -597,6 +608,59 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
   <div style="display:flex;gap:8px;margin-top:4px">
     <button class="btn btn-accent" onclick="guardarStock()">Guardar</button>
     <button class="btn" onclick="closeModal('modal-stock')">Cancelar</button>
+  </div>
+</div>
+</div>
+
+<!-- MODAL LOCAL -->
+<div class="modal-overlay" id="modal-local" style="display:none">
+<div class="modal">
+  <div class="modal-title">
+    <span id="modal-local-title">Agregar local</span>
+    <button class="btn btn-ghost btn-sm" onclick="closeModal('modal-local')">✕</button>
+  </div>
+  <div class="form-grid">
+    <div class="form-group"><label>Nombre / identificación *</label><input id="ml-nombre" placeholder="Ej: Local Av. Cabildo 2300"></div>
+    <div class="form-group"><label>Dirección</label><input id="ml-direccion" placeholder="Calle y número"></div>
+    <div class="form-group"><label>Superficie (m²)</label><input type="number" id="ml-m2" placeholder="0"></div>
+    <div class="form-group"><label>Inquilino / locatario</label><input id="ml-inquilino" placeholder="Nombre (opcional)"></div>
+    <div class="form-group"><label>Alquiler mensual</label><input type="number" id="ml-alquiler" placeholder="0"></div>
+    <div class="form-group"><label>Moneda</label>
+      <select id="ml-moneda"><option value="USD">USD</option><option value="ARS">ARS</option></select>
+    </div>
+    <div class="form-group"><label>Inicio de contrato</label><input type="month" id="ml-inicio"></div>
+    <div class="form-group"><label>Fin de contrato</label><input type="month" id="ml-fin"></div>
+    <div class="form-group" style="grid-column:1/-1"><label>Notas</label><input id="ml-notas" placeholder="Observaciones (opcional)"></div>
+  </div>
+  <div id="ml-error" class="alert alert-error" style="display:none;margin-top:10px"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px">
+    <button class="btn" onclick="closeModal('modal-local')">Cancelar</button>
+    <button class="btn btn-accent" onclick="guardarLocal()">Guardar local</button>
+  </div>
+</div>
+</div>
+
+<!-- MODAL ALQUILER LOCAL -->
+<div class="modal-overlay" id="modal-local-alquiler" style="display:none">
+<div class="modal">
+  <div class="modal-title">
+    <span id="modal-local-alquiler-title">Asignar alquiler</span>
+    <button class="btn btn-ghost btn-sm" onclick="closeModal('modal-local-alquiler')">✕</button>
+  </div>
+  <div style="font-size:12px;color:var(--muted);margin-bottom:14px" id="mla-local-nombre"></div>
+  <div class="form-grid">
+    <div class="form-group"><label>Inquilino / locatario</label><input id="mla-inquilino" placeholder="Nombre"></div>
+    <div class="form-group"><label>Alquiler mensual *</label><input type="number" id="mla-monto" placeholder="0"></div>
+    <div class="form-group"><label>Moneda</label>
+      <select id="mla-moneda"><option value="USD">USD</option><option value="ARS">ARS</option></select>
+    </div>
+    <div class="form-group"><label>Inicio de contrato</label><input type="month" id="mla-inicio"></div>
+    <div class="form-group"><label>Fin de contrato</label><input type="month" id="mla-fin"></div>
+  </div>
+  <div id="mla-error" class="alert alert-error" style="display:none;margin-top:10px"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px">
+    <button class="btn" onclick="closeModal('modal-local-alquiler')">Cancelar</button>
+    <button class="btn btn-accent" onclick="guardarAlquilerLocal()">Guardar alquiler</button>
   </div>
 </div>
 </div>
@@ -833,6 +897,7 @@ const PAGE_META = {
   egresos:{title:'Egresos',sub:'Gastos por categoría'},
   dashboards:{title:'Proyectos',sub:'Ingresos y egresos por proyecto — mensual y acumulado'},
   otroing:{title:'Otros ingresos',sub:'Alquileres, honorarios y otros ingresos recurrentes o en cuotas'},
+  locales:{title:'Locales comerciales',sub:'Alquileres, contratos y valor de mercado estimado'},
   cashflow:{title:'Ingresos & Egresos',sub:'Flujo de fondos mes a mes'},
   'ventas-anal':{title:'Análisis de Ventas',sub:'Indicadores comerciales — datos independientes del cashflow'},
   'comercial':{title:'Marketing',sub:'Rendimiento de campañas — Instagram DUEÑO y COTELLO'},
@@ -849,6 +914,7 @@ function nav(page){
   acts.innerHTML = '';
   if(page==='ventas') acts.innerHTML=`<button class="btn btn-accent" onclick="openModalVenta()">+ Nueva venta</button>`;
   if(page==='stock') acts.innerHTML=`<button class="btn btn-accent" onclick="openModal('modal-stock')">+ Agregar unidad</button>`;
+  if(page==='locales') acts.innerHTML=`<button class="btn btn-accent" onclick="openModalLocal()">+ Agregar local</button>`;
   if(page==='egresos') acts.innerHTML=`<button class="btn btn-accent" onclick="openModalEgreso()">+ Nuevo egreso</button>`;
   if(page==='dashboard') renderDashboard();
   if(page==='ventas') renderVentas();
@@ -860,6 +926,7 @@ function nav(page){
     document.getElementById('topbar-actions').innerHTML=`<button class="btn btn-accent" onclick="openModalSaldo(null,null)" style="display:none"></button>`;
   }
   if(page==='stock') renderStock();
+  if(page==='locales') renderLocales();
   if(page==='egresos') renderEgresos();
   if(page==='cashflow'){
     acts.innerHTML=`<button class="btn" onclick="exportarCashflowXLSX()" style="font-size:12px">📊 Exportar Excel</button>`;
@@ -895,6 +962,7 @@ function updateBadges(){
   document.getElementById('nb-stock').textContent = stock.length;
   document.getElementById('nb-egresos').textContent = egresos.length;
   document.getElementById('nb-otroing').textContent = otrosIng.length;
+  var nbLoc=document.getElementById('nb-locales'); if(nbLoc) nbLoc.textContent = LOCALES.length;
 }
 
 // ─── FORMAT ─────────────────────────────────────────────────────────────────
@@ -4635,6 +4703,198 @@ async function exportarCashflowXLSX(){
   a.download = `Cashflow_${new Date().toISOString().slice(0,10)}.xlsx`;
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   setTimeout(()=>URL.revokeObjectURL(url), 1000);
+}
+
+
+// ─── LOCALES ──────────────────────────────────────────────────────────────────
+let LOCALES=[{"id":1782306181748,"nombre":"Quesada 3050","direccion":"Quesada 3050","m2":168,"inquilino":"Cofi Jaus","alquiler":3100,"moneda":"USD","inicio":"2024-12","fin":"2027-11","notas":""},{"id":1782306298115,"nombre":"Melian 3990","direccion":"Melian 3990","m2":80,"inquilino":"Leble","alquiler":1500,"moneda":"USD","inicio":"2023-12","fin":"2026-11","notas":""},{"id":1782306376900,"nombre":"Vilela 3399","direccion":"Vilela 3399","m2":81.3,"inquilino":"Zulu","alquiler":3000,"moneda":"USD","inicio":"2026-08","fin":"2029-08","notas":""}];
+(function(){ try{ var s=localStorage.getItem('cf_LOCALES'); if(s){ var a=JSON.parse(s); if(Array.isArray(a)) LOCALES=a; } }catch(e){} })();
+
+let editingLocalId = null;
+let alquilerLocalId = null;
+
+function saveLocales(){ save('LOCALES', LOCALES); }
+
+// Valor de mercado: alquiler anual = 5% del valor → valor = alquiler_anual / 0.05
+function valorMercadoLocal(alquilerMensual){
+  if(!alquilerMensual || alquilerMensual<=0) return 0;
+  return Math.round((alquilerMensual * 12) / 0.05);
+}
+
+function openModalLocal(id=null){
+  editingLocalId = id;
+  const l = id ? LOCALES.find(x=>String(x.id)===String(id)) : null;
+  document.getElementById('modal-local-title').textContent = id?'Editar local':'Agregar local';
+  document.getElementById('ml-nombre').value    = l?l.nombre||'':'';
+  document.getElementById('ml-direccion').value = l?l.direccion||'':'';
+  document.getElementById('ml-m2').value        = l?l.m2||'':'';
+  document.getElementById('ml-inquilino').value = l?l.inquilino||'':'';
+  document.getElementById('ml-alquiler').value  = l?l.alquiler||'':'';
+  document.getElementById('ml-moneda').value    = l?l.moneda||'USD':'USD';
+  document.getElementById('ml-inicio').value    = l?l.inicio||'':'';
+  document.getElementById('ml-fin').value       = l?l.fin||'':'';
+  document.getElementById('ml-notas').value     = l?l.notas||'':'';
+  document.getElementById('ml-error').style.display='none';
+  openModal('modal-local');
+}
+
+function guardarLocal(){
+  const nombre = document.getElementById('ml-nombre').value.trim();
+  const errEl = document.getElementById('ml-error');
+  if(!nombre){ errEl.style.display='block'; errEl.textContent='Ingresá un nombre para el local.'; return; }
+  errEl.style.display='none';
+  const datos = {
+    nombre,
+    direccion: document.getElementById('ml-direccion').value.trim(),
+    m2:        parseFloat(document.getElementById('ml-m2').value)||0,
+    inquilino: document.getElementById('ml-inquilino').value.trim(),
+    alquiler:  parseFloat(document.getElementById('ml-alquiler').value)||0,
+    moneda:    document.getElementById('ml-moneda').value,
+    inicio:    document.getElementById('ml-inicio').value,
+    fin:       document.getElementById('ml-fin').value,
+    notas:     document.getElementById('ml-notas').value.trim(),
+  };
+  if(editingLocalId){
+    const existing = LOCALES.find(x=>String(x.id)===String(editingLocalId))||{};
+    LOCALES = LOCALES.map(x=>String(x.id)===String(editingLocalId)?{...existing,...datos,id:existing.id}:x);
+  } else {
+    LOCALES.push({id:Date.now(),...datos});
+  }
+  saveLocales();
+  closeModal('modal-local');
+  renderLocales();
+  updateBadges();
+}
+
+function eliminarLocal(id){
+  if(!confirm('¿Eliminar este local?')) return;
+  LOCALES = LOCALES.filter(x=>String(x.id)!==String(id));
+  saveLocales();
+  renderLocales();
+  updateBadges();
+}
+
+function openModalAlquilerLocal(id){
+  alquilerLocalId = id;
+  const l = LOCALES.find(x=>String(x.id)===String(id));
+  if(!l) return;
+  document.getElementById('mla-local-nombre').textContent = l.nombre + (l.direccion?' · '+l.direccion:'');
+  document.getElementById('mla-inquilino').value = l.inquilino||'';
+  document.getElementById('mla-monto').value     = l.alquiler||'';
+  document.getElementById('mla-moneda').value    = l.moneda||'USD';
+  document.getElementById('mla-inicio').value    = l.inicio||'';
+  document.getElementById('mla-fin').value       = l.fin||'';
+  document.getElementById('mla-error').style.display='none';
+  openModal('modal-local-alquiler');
+}
+
+function guardarAlquilerLocal(){
+  const monto = parseFloat(document.getElementById('mla-monto').value)||0;
+  const errEl = document.getElementById('mla-error');
+  if(monto<=0){ errEl.style.display='block'; errEl.textContent='Ingresá un alquiler válido.'; return; }
+  errEl.style.display='none';
+  LOCALES = LOCALES.map(l=>{
+    if(String(l.id)!==String(alquilerLocalId)) return l;
+    return {...l,
+      inquilino: document.getElementById('mla-inquilino').value.trim(),
+      alquiler:  monto,
+      moneda:    document.getElementById('mla-moneda').value,
+      inicio:    document.getElementById('mla-inicio').value,
+      fin:       document.getElementById('mla-fin').value,
+    };
+  });
+  saveLocales();
+  closeModal('modal-local-alquiler');
+  renderLocales();
+}
+
+function mesesRestantes(fin){
+  if(!fin) return null;
+  const hoy = todayYM();
+  const [hy,hm]=hoy.split('-').map(Number);
+  const [fy,fm]=fin.split('-').map(Number);
+  return (fy-hy)*12 + (fm-hm);
+}
+
+function renderLocales(){
+  const el = document.getElementById('locales-content');
+  if(!el) return;
+  const tc = caja.tc||1200;
+
+  if(!LOCALES.length){
+    el.innerHTML = `<div class="empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg><p>No hay locales cargados.<br>Agregá uno con el botón superior.</p></div>`;
+    return;
+  }
+
+  // KPIs
+  const toUSD = (m,mon)=> mon==='USD'?m:m/tc;
+  const totalAlqUSD = LOCALES.reduce((s,l)=>s+toUSD(l.alquiler||0,l.moneda),0);
+  const totalValorUSD = LOCALES.reduce((s,l)=>s+toUSD(valorMercadoLocal(l.alquiler||0),l.moneda),0);
+  const conContrato = LOCALES.filter(l=>l.fin).length;
+
+  const kpis = `<div class="metrics-row" style="margin-bottom:20px">
+    <div class="metric-card">
+      <div class="metric-label">Locales</div>
+      <div class="metric-val accent">${LOCALES.length}</div>
+      <div class="metric-sub">${conContrato} con contrato vigente</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Alquiler mensual total</div>
+      <div class="metric-val green">U$S ${fmtN(Math.round(totalAlqUSD))}</div>
+      <div class="metric-sub">U$S ${fmtN(Math.round(totalAlqUSD*12))} anual</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Valor de mercado estimado</div>
+      <div class="metric-val amber">U$S ${fmtN(Math.round(totalValorUSD))}</div>
+      <div class="metric-sub">alquiler anual = 5% del valor</div>
+    </div>
+  </div>`;
+
+  const rows = LOCALES.map(l=>{
+    const valor = valorMercadoLocal(l.alquiler||0);
+    const rest = mesesRestantes(l.fin);
+    let estadoContrato;
+    if(rest===null) estadoContrato = '<span style="color:var(--muted)">Sin contrato</span>';
+    else if(rest<0) estadoContrato = '<span style="color:var(--red)">Vencido</span>';
+    else if(rest<=3) estadoContrato = `<span style="color:var(--amber)">Vence en ${rest} mes${rest!==1?'es':''}</span>`;
+    else estadoContrato = `<span style="color:var(--green)">${rest} meses restantes</span>`;
+    const sym = l.moneda==='USD'?'U$S':'$';
+    return `<tr>
+      <td style="text-align:left">
+        <div style="font-weight:500">${l.nombre}</div>
+        ${l.direccion?`<div style="font-size:11px;color:var(--muted)">${l.direccion}</div>`:''}
+      </td>
+      <td style="text-align:left;font-size:12px">${l.inquilino||'<span style="color:var(--muted)">—</span>'}</td>
+      <td style="text-align:right">${l.m2?l.m2+' m²':'—'}</td>
+      <td style="text-align:right;font-family:var(--mono);color:var(--green)">${l.alquiler?sym+' '+fmtN(l.alquiler):'—'}</td>
+      <td style="text-align:right;font-family:var(--mono);color:var(--amber);font-weight:600">${valor?sym+' '+fmtN(valor):'—'}</td>
+      <td style="text-align:left;font-size:12px">${l.fin?ym2label(l.fin):'—'}<br><span style="font-size:10px">${estadoContrato}</span></td>
+      <td style="text-align:right;white-space:nowrap">
+        <button class="btn btn-sm" onclick="openModalAlquilerLocal(${l.id})" title="Asignar alquiler">💲</button>
+        <button class="btn btn-sm" onclick="openModalLocal(${l.id})" title="Editar">✏️</button>
+        <button class="btn btn-sm" onclick="eliminarLocal(${l.id})" title="Eliminar">🗑</button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  el.innerHTML = kpis + `
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          <th style="text-align:left">Local</th>
+          <th style="text-align:left">Inquilino</th>
+          <th style="text-align:right">Sup.</th>
+          <th style="text-align:right">Alquiler mensual</th>
+          <th style="text-align:right">Valor mercado (×20)</th>
+          <th style="text-align:left">Fin contrato</th>
+          <th style="text-align:right">Acciones</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+    <div style="font-size:11px;color:var(--muted);margin-top:10px">
+      💡 Valor de mercado estimado: el alquiler anual representa el 5% del valor de la propiedad, por lo que valor = alquiler mensual × 12 ÷ 0,05 (equivale a × 240 sobre el alquiler mensual).
+    </div>`;
 }
 
 
