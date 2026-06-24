@@ -217,7 +217,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.5);}.sm{opacity:.7}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">23/06/2026 10:21 a. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">24/06/2026 09:42 a. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -2503,18 +2503,65 @@ function renderDashboards(){
         <div class="metric-val red">${fmtUSD(totalEgr)}</div>
         <div class="metric-sub">${meses.length} meses</div>
       </div>
-      <div class="metric-card" style="border-color:${totalNeto>=0?'rgba(200,240,96,0.25)':'rgba(240,96,96,0.25)'}">
-        <div class="metric-label">Flujo neto período</div>
-        <div class="metric-val ${totalNeto>=0?'accent':'red'}">${totalNeto>=0?'+':''}${fmtUSD(totalNeto)}</div>
-        <div class="metric-sub">Ingresos − egresos</div>
-      </div>
       <div class="metric-card" style="border-color:${(getTotalUSDProyecto(dbFiltroProyecto)+totalNeto)>=0?'rgba(96,180,240,0.3)':'rgba(240,96,96,0.3)'}">
         <div class="metric-label">Saldo proyectado${dbFiltroProyecto?' — '+dbFiltroProyecto:''}</div>
         <div class="metric-val ${(getTotalUSDProyecto(dbFiltroProyecto)+totalNeto)>=0?'accent':'red'}">${fmtUSD(getTotalUSDProyecto(dbFiltroProyecto)+totalNeto)}</div>
         <div class="metric-sub">Caja ${dbFiltroProyecto?'del proyecto':'total'} + flujo</div>
       </div>
+      ${(()=>{
+        const unidades = dbFiltroProyecto ? stock.filter(u=>u.proyecto===dbFiltroProyecto) : stock;
+        const dispUnidades = unidades.filter(u=>!u.estado || String(u.estado).toUpperCase().includes('DISP'));
+        const disp = dispUnidades.length;
+        const valDisp = dispUnidades.reduce((s,u)=>s+(u.moneda==='USD'?u.precio:(u.precio/(caja.tc||1200))),0);
+        return `<div class="metric-card" style="border-color:rgba(240,184,96,0.3)">
+          <div class="metric-label">Stock de unidades${dbFiltroProyecto?' — '+dbFiltroProyecto:''}</div>
+          <div class="metric-val amber">${fmtUSD(valDisp)}</div>
+          <div class="metric-sub">${disp} unidad${disp!==1?'es':''} disponible${disp!==1?'s':''} para venta</div>
+        </div>`;
+      })()}
     </div>
   `;
+
+  // ── Stock de unidades por proyecto (solo en vista Todos) ──────────────────
+  if(!dbFiltroProyecto && stock.length){
+    const porProy = {};
+    stock.forEach(u=>{ const p=u.proyecto||'Sin proyecto'; if(!porProy[p])porProy[p]={n:0,disp:0,val:0}; porProy[p].n++; if(!u.estado||String(u.estado).toUpperCase().includes('DISP'))porProy[p].disp++; porProy[p].val+=(u.moneda==='USD'?u.precio:(u.precio/(caja.tc||1200))); });
+    const filas = Object.entries(porProy).sort((a,b)=>b[1].n-a[1].n).map(([p,d])=>{
+      const col = PROY_COLORS[p]||'#60d098';
+      return `<tr>
+        <td style="text-align:left"><span class="tag" style="background:${col}22;color:${col};font-size:10px">${p}</span></td>
+        <td style="text-align:right;font-family:var(--mono);font-size:12px">${d.n}</td>
+        <td style="text-align:right;font-family:var(--mono);font-size:12px;color:var(--green)">${d.disp}</td>
+        <td style="text-align:right;font-family:var(--mono);font-size:12px">${fmtUSD(d.val)}</td>
+      </tr>`;
+    }).join('');
+    const totN = stock.length;
+    const totDisp = stock.filter(u=>!u.estado||String(u.estado).toUpperCase().includes('DISP')).length;
+    const totVal = stock.reduce((s,u)=>s+(u.moneda==='USD'?u.precio:(u.precio/(caja.tc||1200))),0);
+    html += `
+      <div class="form-section" style="margin-bottom:20px">
+        <div class="form-section-title" style="font-size:12px;margin-bottom:10px">Stock de unidades por proyecto</div>
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr>
+              <th style="text-align:left">Proyecto</th>
+              <th style="text-align:right">Unidades</th>
+              <th style="text-align:right">Disponibles</th>
+              <th style="text-align:right">Valor total</th>
+            </tr></thead>
+            <tbody>
+              ${filas}
+              <tr class="tbl-total">
+                <td style="text-align:left">TOTAL</td>
+                <td style="text-align:right">${totN}</td>
+                <td style="text-align:right">${totDisp}</td>
+                <td style="text-align:right">${fmtUSD(totVal)}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>`;
+  }
 
   if(currentDashTab === 'mensual'){
     html += `
