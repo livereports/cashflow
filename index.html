@@ -217,7 +217,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.5);}.sm{opacity:.7}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">29/07/2026 04:11 p. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">04/08/2026 10:48 a. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -2530,33 +2530,20 @@ function totalesTotalesProyecto(proy, tc){
 }
 
 
-function obraTotalesProyecto(proy, tc){
-  // Gastos de obra (categoría "obras") del proyecto, sobre TODO el ciclo del proyecto.
-  // total     = presupuestado completo
-  // consumido = desde el inicio hasta el mes actual INCLUSIVE
-  // pendiente = total − consumido
-  const hoy = todayYM();
-  const es = egresos.filter(e => e.cat === 'obras' && (!proy || e.proyecto === proy));
-  if(!es.length) return {total:0, consumido:0, pendiente:0, desde:null, hasta:null, hoy, nPend:0};
-
+function egresosPendientesProyecto(proy, tc){
   const rango = detectarRangoProyecto(proy);
-  const primerObra = es.map(e=>e.mes).filter(Boolean).sort()[0] || hoy;
-  const desde = rango ? (rango[0] < primerObra ? rango[0] : primerObra) : primerObra;
-  const hasta = rango ? (rango[1] > hoy ? rango[1] : hoy) : hoy;
-
+  const hoy = todayYM();
+  if(!rango) return {monto:0, desde:hoy, hasta:null, n:0};
+  const fin = rango[1];
+  if(fin < hoy) return {monto:0, desde:hoy, hasta:fin, n:0};
   const ms = [];
-  let cur = desde;
-  while(cur <= hasta && ms.length < 360){ ms.push(cur); cur = addMonths(cur,1); }
-
-  let total = 0, consumido = 0, nPend = 0;
-  ms.forEach(m => {
-    const v = es.reduce((s,e)=>s + calcEgresoMY(e,m,tc), 0);
-    total += v;
-    if(m <= hoy) consumido += v;
-    else if(v > 0) nPend++;
-  });
-
-  return {total, consumido, pendiente: total - consumido, desde, hasta, hoy, nPend};
+  let cur = hoy;
+  while(cur <= fin && ms.length < 240){ ms.push(cur); cur = addMonths(cur,1); }
+  const _orig = filtroProyecto;
+  filtroProyecto = proy;
+  const monto = ms.reduce((s,m)=>s + calcEgresosYM(m,tc).total_usd, 0);
+  filtroProyecto = _orig;
+  return {monto, desde:hoy, hasta:fin, n:ms.length};
 }
 
 function precioPromedioStock(proy, tc){
@@ -2640,7 +2627,7 @@ function renderDashboards(){
 
   // ── Segunda fila: pendiente de obra + unidades a vender ───────────────────
   {
-    const OBRA = obraTotalesProyecto(dbFiltroProyecto, tc);
+    const PEND = egresosPendientesProyecto(dbFiltroProyecto, tc);
     const PS   = precioPromedioStock(dbFiltroProyecto, tc);
     const deficit = TT.neto < 0 ? Math.abs(TT.neto) : 0;
     const unidadesNec = (deficit > 0 && PS.prom > 0) ? Math.ceil(deficit / PS.prom) : 0;
@@ -2675,12 +2662,8 @@ function renderDashboards(){
     <div class="metrics-row" style="margin-bottom:20px">
       <div class="metric-card" style="border-color:rgba(240,96,96,0.25)">
         <div class="metric-label">Saldo pendiente de obra${dbFiltroProyecto?' — '+dbFiltroProyecto:''}</div>
-        <div class="metric-val red">${fmtUSD(OBRA.pendiente)}</div>
-        <div class="metric-sub" style="line-height:1.5">
-          Presupuestado obra: <span style="font-family:var(--mono);color:var(--text)">${fmtUSD(OBRA.total)}</span><br>
-          Consumido hasta ${ym2label(OBRA.hoy)}: <span style="font-family:var(--mono);color:var(--text)">${fmtUSD(OBRA.consumido)}</span><br>
-          <span style="color:var(--muted)">${OBRA.total>0?Math.round(OBRA.consumido/OBRA.total*100):0}% ejecutado · ${OBRA.nPend} meses con gasto pendiente</span>
-        </div>
+        <div class="metric-val red">${fmtUSD(PEND.monto)}</div>
+        <div class="metric-sub">${PEND.hasta&&PEND.n>0?'Desde '+ym2label(PEND.desde)+' hasta '+ym2label(PEND.hasta)+' · '+PEND.n+' meses':'Sin egresos pendientes'}</div>
       </div>
       ${cardUnidades}
     </div>`;
@@ -3644,6 +3627,7 @@ let VENTAS_ANAL=[{"fecha":"2025-02-05","proyecto":"MELIAN 3899","uf":"602","tipo
 // ─── VENTAS ANÁLISIS ─────────────────────────────────────────────────────────
 let vaFiltro = '';
 let vaFiltroMeses = 0; // 0=todo, 1,3,6,12
+let vaFiltroTipo = ''; // '' todos, 'directa' (cotello SI), 'inversor' (cotello NO)
 let vaSortCol = '';
 let vaSortDir = 1;
 
@@ -3653,6 +3637,10 @@ function setVaFiltro(p){
 }
 function setVaMeses(n){
   vaFiltroMeses = n;
+  renderVentasAnal();
+}
+function setVaTipo(t){
+  vaFiltroTipo = t;
   renderVentasAnal();
 }
 
@@ -3670,6 +3658,9 @@ function renderVentasAnal(){
   const allMesesVA = [...new Set(VENTAS_ANAL.map(v=>v.fecha.slice(0,7)))].sort();
   const mesesVAFilt = vaFiltroMeses > 0 ? allMesesVA.slice(-vaFiltroMeses) : allMesesVA;
   let baseRows = vaFiltro ? VENTAS_ANAL.filter(v=>v.proyecto===vaFiltro) : VENTAS_ANAL;
+  // Filtro tipo de venta: directa (cotello SI) vs inversor (cotello NO)
+  if(vaFiltroTipo==='directa')  baseRows = baseRows.filter(v=>String(v.cotello||'').toUpperCase()==='SI');
+  if(vaFiltroTipo==='inversor') baseRows = baseRows.filter(v=>String(v.cotello||'').toUpperCase()!=='SI');
   const rows = mesesVAFilt.length < allMesesVA.length
     ? baseRows.filter(v=>mesesVAFilt.includes(v.fecha.slice(0,7)))
     : baseRows;
@@ -3783,6 +3774,15 @@ function renderVentasAnal(){
   }).join('')}
   <span style="font-size:11px;color:var(--muted);margin-left:4px">${n} operaciones</span>
 </div>
+<div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+  <span style="font-size:12px;color:var(--muted);font-weight:500">Tipo de venta:</span>
+  ${[['','Todas','#c8f060'],['directa','Venta directa','#60d098'],['inversor','Venta inversor','#60b4f0']].map(([v,lbl,col])=>{
+    const on=vaFiltroTipo===v;
+    return `<button onclick="setVaTipo('${v}')" style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid ${on?col:'#444'};background:${on?col:'transparent'};color:${on?'#0f0f0f':col};box-shadow:${on?'0 0 10px '+col+'55':'none'};transition:all .15s">${lbl}</button>`;
+  }).join('')}
+  <span style="font-size:11px;color:var(--muted);margin-left:4px">Directa = propia · Inversor = de terceros</span>
+</div>
+
 <!-- KPIs -->
 <div class="metrics-row" style="margin-bottom:24px">
   <div class="metric-card">
@@ -3928,6 +3928,7 @@ function renderVentasAnal(){
       ${sh('val_total','Val. total')}
       ${sh('m2_precio','U$S/m²')}
       ${sh('canal','Canal')}
+      ${sh('cotello','Tipo venta')}
       ${sh('estado','Estado')}
       ${sh('propietario','Propietario')}
     </tr></thead>
@@ -3942,6 +3943,7 @@ function renderVentasAnal(){
       <td class="positive" style="font-weight:500">${v.val_total?'U$S '+fmtN(v.val_total):'—'}</td>
       <td style="color:var(--muted);text-align:right">${v.m2_precio?'U$S '+fmtN(v.m2_precio):'—'}</td>
       <td style="font-size:11px;text-align:left">${v.canal||'—'}</td>
+      <td style="text-align:left">${String(v.cotello||'').toUpperCase()==='SI'?'<span class="tag" style="background:rgba(96,208,152,0.15);color:#60d098;font-size:10px">Directa</span>':'<span class="tag" style="background:rgba(96,180,240,0.15);color:#60b4f0;font-size:10px">Inversor</span>'}</td>
       <td style="text-align:left"><span class="tag" style="background:${v.estado==='VENDIDO'?'rgba(96,208,152,0.15)':'rgba(240,184,96,0.15)'};color:${v.estado==='VENDIDO'?'var(--green)':'var(--amber)'};font-size:10px">${v.estado}</span></td>
       <td style="font-size:11px;color:var(--muted);text-align:left">${v.propietario||'—'}</td>
     </tr>`).join('')}
@@ -3950,7 +3952,7 @@ function renderVentasAnal(){
 </div>`;
 }
 // ─── COMERCIAL ───────────────────────────────────────────────────────────────
-let COMERCIAL_DATA=[{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-09","valor":220610},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-10","valor":491989},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-11","valor":694452},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-12","valor":624312},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-01","valor":609179},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-02","valor":718286},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-03","valor":912312},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-04","valor":2728000},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-05","valor":4220564},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-06","valor":3552000},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-09","valor":53089},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-10","valor":53089},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-11","valor":68050},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-12","valor":44246},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-01","valor":87621},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-02","valor":49546},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-03","valor":60405},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-04","valor":377470},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-05","valor":211486},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-06","valor":174563},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-09","valor":54},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-10","valor":358},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-11","valor":269},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-12","valor":305},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-01","valor":176},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-02","valor":207},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-03","valor":271},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-04","valor":887},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-05","valor":1103},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-06","valor":2787},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-09","valor":null},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-10","valor":2},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-11","valor":7},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-12","valor":3},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-01","valor":7},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-02","valor":6},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-03","valor":11},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-04","valor":19},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-05","valor":14},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-06","valor":11},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-09","valor":null},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-10","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-11","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-12","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-01","valor":2},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-02","valor":2},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-03","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-04","valor":2},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-05","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-06","valor":1},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-09","valor":547282},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-10","valor":1186522},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-11","valor":2172407},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-12","valor":2549717},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-01","valor":2575918},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-02","valor":2340040},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-03","valor":2642774},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-04","valor":3227644},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-05","valor":3871000},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-06","valor":4332000},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-09","valor":55254},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-10","valor":81739},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-11","valor":169883},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-12","valor":252816},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-01","valor":311506},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-02","valor":176034},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-03","valor":220085},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-04","valor":317271},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-05","valor":349500},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-06","valor":218488},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-09","valor":null},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-10","valor":186},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-11","valor":282},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-12","valor":474},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-01","valor":464},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-02","valor":538},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-03","valor":911},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-04","valor":2716},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-05","valor":1302},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-06","valor":1607},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-09","valor":null},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-10","valor":null},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-11","valor":4},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-12","valor":1},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-01","valor":7},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-02","valor":5},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-03","valor":6},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-04","valor":9},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-05","valor":16},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-06","valor":11},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-09","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-10","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-11","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-12","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-01","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-02","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-03","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-04","valor":1},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-05","valor":2},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-06","valor":0}];
+let COMERCIAL_DATA=[{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-09","valor":220610},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-10","valor":491989},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-11","valor":694452},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2025-12","valor":624312},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-01","valor":609179},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-02","valor":718286},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-03","valor":912312},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-04","valor":2728000},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-05","valor":4220564},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-06","valor":3552000},{"canal":"DUEÑO","concepto":"INVERSION","mes":"2026-07","valor":7894871},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-09","valor":53089},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-10","valor":53089},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-11","valor":68050},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2025-12","valor":44246},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-01","valor":87621},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-02","valor":49546},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-03","valor":60405},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-04","valor":377470},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-05","valor":211486},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-06","valor":174563},{"canal":"DUEÑO","concepto":"ALCANCE","mes":"2026-07","valor":412994},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-09","valor":54},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-10","valor":358},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-11","valor":269},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2025-12","valor":305},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-01","valor":176},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-02","valor":207},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-03","valor":271},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-04","valor":887},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-05","valor":1103},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-06","valor":2787},{"canal":"DUEÑO","concepto":"MENSAJES","mes":"2026-07","valor":5158},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-09","valor":null},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-10","valor":2},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-11","valor":7},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2025-12","valor":3},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-01","valor":7},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-02","valor":6},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-03","valor":11},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-04","valor":19},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-05","valor":14},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-06","valor":11},{"canal":"DUEÑO","concepto":"VISITAS","mes":"2026-07","valor":11},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-09","valor":null},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-10","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-11","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2025-12","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-01","valor":2},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-02","valor":2},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-03","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-04","valor":2},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-05","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-06","valor":1},{"canal":"DUEÑO","concepto":"VENTA","mes":"2026-07","valor":3},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-09","valor":547282},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-10","valor":1186522},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-11","valor":2172407},{"canal":"COTELLO","concepto":"INVERSION","mes":"2025-12","valor":2549717},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-01","valor":2575918},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-02","valor":2340040},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-03","valor":2642774},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-04","valor":3227644},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-05","valor":3871000},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-06","valor":4332000},{"canal":"COTELLO","concepto":"INVERSION","mes":"2026-07","valor":5864984},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-09","valor":55254},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-10","valor":81739},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-11","valor":169883},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2025-12","valor":252816},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-01","valor":311506},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-02","valor":176034},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-03","valor":220085},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-04","valor":317271},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-05","valor":349500},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-06","valor":218488},{"canal":"COTELLO","concepto":"ALCANCE","mes":"2026-07","valor":431053},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-09","valor":null},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-10","valor":186},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-11","valor":282},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2025-12","valor":474},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-01","valor":464},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-02","valor":538},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-03","valor":911},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-04","valor":2716},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-05","valor":1302},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-06","valor":1607},{"canal":"COTELLO","concepto":"MENSAJES","mes":"2026-07","valor":5345},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-09","valor":null},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-10","valor":null},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-11","valor":4},{"canal":"COTELLO","concepto":"VISITAS","mes":"2025-12","valor":1},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-01","valor":7},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-02","valor":5},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-03","valor":6},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-04","valor":9},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-05","valor":16},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-06","valor":11},{"canal":"COTELLO","concepto":"VISITAS","mes":"2026-07","valor":11},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-09","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-10","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-11","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2025-12","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-01","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-02","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-03","valor":null},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-04","valor":1},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-05","valor":2},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-06","valor":0},{"canal":"COTELLO","concepto":"VENTA","mes":"2026-07","valor":0}];
 
 // Persistencia local: si hay datos guardados en localStorage, sobrescriben los del snapshot
 (function(){
