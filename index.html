@@ -217,7 +217,7 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
 .pill.active{background:rgba(200,240,96,0.15);border-color:var(--accent);color:var(--accent)}
 </style>
 <style>#sb{position:fixed;top:0;left:0;right:0;z-index:9998;background:linear-gradient(90deg,#1a3a5c,#1e5a8a);color:#fff;font-size:12px;padding:7px 20px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 8px rgba(0,0,0,.5);}.sm{opacity:.7}.app{padding-top:34px!important}#nav-importar,.sidebar-footer .btn,.sidebar-footer input{display:none!important}</style></head>
-<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">20/08/2026 12:50 p. m.</div></div>
+<body><div id="ls" style="position:fixed;inset:0;z-index:99999;background:#0f0f0f;display:flex;align-items:center;justify-content:center"><div style="background:#181818;border:1px solid #2e2e2e;border-radius:12px;padding:40px;width:90%;max-width:340px;text-align:center"><div style="font-size:28px;margin-bottom:8px">&#x1F4CA;</div><div style="font-size:17px;font-weight:600;color:#f0ede8;margin-bottom:4px">Cashflow</div><div style="font-size:12px;color:#888;margin-bottom:20px">Ingresá la contraseña</div><input id="pi" type="password" style="width:100%;background:#222;border:1px solid #3a3a3a;border-radius:6px;padding:10px;color:#f0ede8;font-size:14px;outline:none;margin-bottom:8px;box-sizing:border-box"><div id="pe" style="color:#f06060;font-size:12px;margin-bottom:8px;display:none">Contraseña incorrecta</div><button onclick="window.__lck()" style="width:100%;background:#c8f060;color:#0f0f0f;border:none;border-radius:6px;padding:10px;font-size:14px;font-weight:600;cursor:pointer">Entrar</button></div></div><script>(function(){var ph=3059677;window.__lck=function(){var v=document.getElementById("pi").value,h=0;for(var i=0;i<v.length;i++){h=((h<<5)-h)+v.charCodeAt(i);h|=0;}if(h===ph){document.getElementById("ls").remove();sessionStorage.setItem("a","1");if(typeof updateBadges==="function"){updateBadges();renderDashboard();}}else{document.getElementById("pe").style.display="block";document.getElementById("pi").value="";}};document.addEventListener("keydown",function(e){if(e.key==="Enter"&&document.getElementById("ls"))window.__lck();});if(sessionStorage.getItem("a")==="1"){setTimeout(function(){var s=document.getElementById("ls");if(s)s.remove();},50);}else{setTimeout(function(){var i=document.getElementById("pi");if(i)i.focus();},100);}})();</script><div id="sb"><div><strong>Cashflow</strong><span class="sm"> Solo lectura</span></div><div class="sm">20/08/2026 05:29 p. m.</div></div>
 <div class="app">
 
 <!-- SIDEBAR -->
@@ -243,6 +243,10 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
   <button class="nav-item" onclick="nav('dashboards')" id="nav-dashboards">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="4" rx="1"/><rect x="13" y="9" width="9" height="4" rx="1"/><rect x="2" y="14" width="20" height="8" rx="1"/></svg>
     Proyectos
+  </button>
+  <button class="nav-item" onclick="nav('rentabilidad')" id="nav-rentabilidad">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-4 4"/><circle cx="18" cy="9" r="1.5"/></svg>
+    Rentabilidad
   </button>
   <button class="nav-item" onclick="nav('cashflow')" id="nav-cashflow">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
@@ -481,6 +485,25 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
       <div id="import-content"></div>
     </div>
 
+    <!-- RENTABILIDAD -->
+    <div class="panel" id="panel-rentabilidad">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+        <span style="font-size:12px;color:var(--muted);font-weight:500">Proyecto:</span>
+        <button class="btn btn-sm rent-proy-btn active" data-p="" onclick="setRentProy('')">Todos</button>
+        <button class="btn btn-sm rent-proy-btn" data-p="Q2" onclick="setRentProy('Q2')" style="border-color:#60b4f0">Q2</button>
+        <button class="btn btn-sm rent-proy-btn" data-p="MELIAN 3899" onclick="setRentProy('MELIAN 3899')" style="border-color:#60d098">MELIAN 3899</button>
+        <button class="btn btn-sm rent-proy-btn" data-p="PAROISSIEN 2" onclick="setRentProy('PAROISSIEN 2')" style="border-color:#f0b860">PAROISSIEN 2</button>
+        <button class="btn btn-sm rent-proy-btn" data-p="VILELA 3399" onclick="setRentProy('VILELA 3399')" style="border-color:#d098f0">VILELA 3399</button>
+        <button class="btn btn-sm rent-proy-btn" data-p="ESTUDIO" onclick="setRentProy('ESTUDIO')" style="border-color:#f06090">ESTUDIO</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;flex-wrap:wrap">
+        <span style="font-size:12px;color:var(--muted);font-weight:500">Vista:</span>
+        <button class="btn btn-sm rent-vista-btn active" data-v="proyecto" onclick="setRentVista('proyecto')">📐 Rentabilidad del proyecto</button>
+        <button class="btn btn-sm rent-vista-btn" data-v="inversores" onclick="setRentVista('inversores')">🤝 Rentabilidad de inversores</button>
+      </div>
+      <div id="rentabilidad-content"></div>
+    </div>
+
     <!-- CASHFLOW -->
     <div class="panel" id="panel-cashflow">
       <div class="period-bar">
@@ -648,6 +671,39 @@ td:not(:first-child){text-align:right;font-family:var(--mono);font-size:12px}
   <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px">
     <button class="btn" onclick="closeModal('modal-local-alquiler')">Cancelar</button>
     <button class="btn btn-accent" onclick="guardarAlquilerLocal()">Guardar alquiler</button>
+  </div>
+</div>
+</div>
+
+<!-- MODAL IMPORTAR RENTABILIDAD -->
+<div class="modal-overlay" id="modal-rent-import" style="display:none">
+<div class="modal" style="max-width:480px">
+  <div class="modal-title">
+    <span>Importar rentabilidad</span>
+    <button class="btn btn-ghost btn-sm" onclick="closeModal('modal-rent-import')">✕</button>
+  </div>
+  <div class="form-group">
+    <label>Proyecto *</label>
+    <select id="ri-proyecto">
+      <option value="Q2">Q2</option>
+      <option value="MELIAN 3899">MELIAN 3899</option>
+      <option value="PAROISSIEN 2">PAROISSIEN 2</option>
+      <option value="VILELA 3399">VILELA 3399</option>
+      <option value="ESTUDIO">ESTUDIO</option>
+    </select>
+  </div>
+  <p style="font-size:11px;color:var(--muted);margin:10px 0;line-height:1.6">
+    Formato esperado: bloque de costos del proyecto (Costos A/B, Total Obra, Terreno, Total Proyecto, M2 Vendibles) e ingresos de inversores en la parte superior, y tabla de unidades con columnas Deptos, Superficie, Comprador, Costo total, Precio A/B, Precio Venta, Ganancia, %RR, y — para unidades revendidas por inversores — Fecha Cesión, Precio Reventa A/B/Total, Ganancia Inversor, %, Años de inversión.
+  </p>
+  <div class="form-group">
+    <label>Archivo Excel *</label>
+    <input type="file" id="ri-file" accept=".xlsx,.xls">
+  </div>
+  <p style="font-size:11px;color:var(--amber);margin:10px 0">⚠ El import reemplaza los datos de rentabilidad previos de ese proyecto.</p>
+  <div id="ri-error" class="alert alert-error" style="display:none;margin-top:10px"></div>
+  <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:16px">
+    <button class="btn" onclick="closeModal('modal-rent-import')">Cancelar</button>
+    <button class="btn btn-accent" onclick="importarRentabilidadExcel()">Importar</button>
   </div>
 </div>
 </div>
@@ -882,6 +938,7 @@ const PAGE_META = {
   otroing:{title:'Otros ingresos',sub:'Alquileres, honorarios y otros ingresos recurrentes o en cuotas'},
   locales:{title:'Locales comerciales',sub:'Alquileres, contratos y valor de mercado estimado'},
   cashflow:{title:'Ingresos & Egresos',sub:'Flujo de fondos mes a mes'},
+  rentabilidad:{title:'Rentabilidad',sub:'Rentabilidad del proyecto vs. rentabilidad de inversores'},
   'ventas-anal':{title:'Análisis de Ventas',sub:'Indicadores comerciales — datos independientes del cashflow'},
   'comercial':{title:'Marketing',sub:'Rendimiento de campañas — Instagram DUEÑO y COTELLO'},
   importar:{title:'Importar Excel',sub:'Cargá gastos de obra o ventas desde un archivo Excel o CSV'},
@@ -910,6 +967,7 @@ function nav(page){
   }
   if(page==='stock') renderStock();
   if(page==='locales') renderLocales();
+  if(page==='rentabilidad'){ pintarRentFiltros(); renderRentabilidad(); }
   if(page==='egresos') renderEgresos();
   if(page==='cashflow'){
     acts.innerHTML=`<button class="btn" onclick="exportarCashflowXLSX()" style="font-size:12px">📊 Exportar Excel</button>`;
@@ -4958,6 +5016,412 @@ function renderLocales(){
     </div>
     <div style="font-size:11px;color:var(--muted);margin-top:10px">
       💡 Valor de mercado estimado: el alquiler anual representa el 5% del valor de la propiedad, por lo que valor = alquiler mensual × 12 ÷ 0,05 (equivale a × 240 sobre el alquiler mensual).
+    </div>`;
+}
+
+
+// ─── RENTABILIDAD ─────────────────────────────────────────────────────────────
+let RENTABILIDAD_UNIDADES=[{"proyecto":"VILELA 3399","unidad":"Local","comprador":"FRANCISCO Y JAVIER","sup":86,"supSemi":0,"supDesc":0,"supTotal":86,"supPond":60.199999999999996,"fechaBoleto":"2026-03-16","costoTotal":142535.26009056048,"precioA":180000,"precioB":55282.62198888202,"precioVenta":235282.62198888202,"ganProyecto":92747.36189832154,"pctProyecto":0.6506976718560309,"fechaCesion":"","reventaA":0,"reventaB":0,"reventaTotal":0,"ganInversor":0,"pctInversor":0,"aniosInversion":0},{"proyecto":"VILELA 3399","unidad":"101","comprador":"","sup":114.17,"supSemi":26.23,"supDesc":0,"supTotal":140.4,"supPond":127.285,"fechaBoleto":"","costoTotal":232697.09903156618,"precioA":490000,"precioB":0,"precioVenta":490000,"ganProyecto":257302.90096843382,"pctProyecto":1.1057417648920917,"fechaCesion":"","reventaA":0,"reventaB":0,"reventaTotal":0,"ganInversor":0,"pctInversor":0,"aniosInversion":0},{"proyecto":"VILELA 3399","unidad":"102","comprador":"","sup":85.44,"supSemi":28.3,"supDesc":0,"supTotal":113.74,"supPond":99.59,"fechaBoleto":"","costoTotal":188511.1684034924,"precioA":350000,"precioB":0,"precioVenta":350000,"ganProyecto":161488.8315965076,"pctProyecto":0.8566539211663803,"fechaCesion":"","reventaA":0,"reventaB":0,"reventaTotal":0,"ganInversor":0,"pctInversor":0,"aniosInversion":0},{"proyecto":"VILELA 3399","unidad":"201","comprador":"FRANCISCO Y JAVIER","sup":114.17,"supSemi":26.23,"supDesc":0,"supTotal":140.4,"supPond":127.285,"fechaBoleto":"2025-08-26","costoTotal":232697.09903156618,"precioA":220000,"precioB":90252.0945027795,"precioVenta":310252.0945027795,"ganProyecto":77554.9954712133,"pctProyecto":0.3332873327341855,"fechaCesion":"2026-07-01","reventaA":250000,"reventaB":280000,"reventaTotal":530000,"ganInversor":219747.90549722052,"pctInversor":0.7082882255779641,"aniosInversion":0.8465753424657534},{"proyecto":"VILELA 3399","unidad":"202","comprador":"JOSEFINA KAPLAN","sup":85.44,"supSemi":20.47,"supDesc":0,"supTotal":105.91,"supPond":95.675,"fechaBoleto":"2026-04-14","costoTotal":175533.83018827045,"precioA":255000,"precioB":115000,"precioVenta":370000,"ganProyecto":194466.16981172955,"pctProyecto":1.1078557882725686,"fechaCesion":"","reventaA":0,"reventaB":0,"reventaTotal":0,"ganInversor":0,"pctInversor":0,"aniosInversion":0},{"proyecto":"VILELA 3399","unidad":"301","comprador":"FRANCISCO Y JAVIER","sup":114.17,"supSemi":26.23,"supDesc":0,"supTotal":140.4,"supPond":127.285,"fechaBoleto":"2025-08-13","costoTotal":232697.09903156618,"precioA":230000,"precioB":90252.0945027795,"precioVenta":320252.0945027795,"ganProyecto":87554.9954712133,"pctProyecto":0.37626165446667714,"fechaCesion":"2026-03-04","reventaA":280000,"reventaB":245000,"reventaTotal":525000,"ganInversor":204747.90549722052,"pctInversor":0.6393335407067682,"aniosInversion":0.5561643835616439},{"proyecto":"VILELA 3399","unidad":"302","comprador":"GALO TOCAGNI","sup":85.44,"supSemi":20.47,"supDesc":0,"supTotal":105.91,"supPond":95.675,"fechaBoleto":"2023-12-04","costoTotal":175533.83018827045,"precioA":140000,"precioB":92714,"precioVenta":232714,"ganProyecto":57180.169811729545,"pctProyecto":0.32575014030287164,"fechaCesion":"2026-03-02","reventaA":270000,"reventaB":130000,"reventaTotal":400000,"ganInversor":167286,"pctInversor":0.7188480280515999,"aniosInversion":2.243835616438356},{"proyecto":"VILELA 3399","unidad":"401","comprador":"FRANCISCO Y JAVIER","sup":114.17,"supSemi":26.23,"supDesc":0,"supTotal":140.4,"supPond":127.285,"fechaBoleto":"2024-10-18","costoTotal":232697.09903156618,"precioA":240000,"precioB":90252.0945027795,"precioVenta":330252.0945027795,"ganProyecto":97554.9954712133,"pctProyecto":0.4192359761991688,"fechaCesion":"2026-04-14","reventaA":285000,"reventaB":260000,"reventaTotal":545000,"ganInversor":214747.90549722052,"pctInversor":0.6502544845946864,"aniosInversion":1.4876712328767123},{"proyecto":"VILELA 3399","unidad":"402","comprador":"WELSH","sup":85.44,"supSemi":20.47,"supDesc":0,"supTotal":105.91,"supPond":95.675,"fechaBoleto":"2022-11-28","costoTotal":175533.83018827045,"precioA":220000,"precioB":56900,"precioVenta":276900,"ganProyecto":101366.16981172955,"pctProyecto":0.5774736966829033,"fechaCesion":"2026-02-11","reventaA":250000,"reventaB":140000,"reventaTotal":390000,"ganInversor":113100,"pctInversor":0.4084507042253521,"aniosInversion":3.208219178082192},{"proyecto":"VILELA 3399","unidad":"501","comprador":"FRANCISCO Y JAVIER","sup":114.17,"supSemi":26.23,"supDesc":0,"supTotal":140.4,"supPond":127.285,"fechaBoleto":"2024-10-18","costoTotal":232697.09903156618,"precioA":250000,"precioB":90252.0945027795,"precioVenta":340252.0945027795,"ganProyecto":107554.9954712133,"pctProyecto":0.46221029793166046,"fechaCesion":"2025-11-11","reventaA":300000,"reventaB":250000,"reventaTotal":550000,"ganInversor":209747.90549722052,"pctInversor":0.6164485359119725,"aniosInversion":1.0657534246575342},{"proyecto":"VILELA 3399","unidad":"502","comprador":"MANUEL Y FLIA","sup":85.44,"supSemi":20.47,"supDesc":0,"supTotal":105.91,"supPond":95.675,"fechaBoleto":"2022-12-28","costoTotal":175533.83018827045,"precioA":226190,"precioB":38095,"precioVenta":264285,"ganProyecto":88751.16981172955,"pctProyecto":0.5056072081178804,"fechaCesion":"2025-10-23","reventaA":286000,"reventaB":129000,"reventaTotal":415000,"ganInversor":150715,"pctInversor":0.570274514255444,"aniosInversion":2.8219178082191783},{"proyecto":"VILELA 3399","unidad":"601","comprador":"REPETTO","sup":161.9,"supSemi":0,"supDesc":92.5,"supTotal":254.4,"supPond":189.65,"fechaBoleto":"2023-05-23","costoTotal":421639.1879888208,"precioA":295428,"precioB":196000,"precioVenta":491428,"ganProyecto":69788.81201117922,"pctProyecto":0.16551785033090802,"fechaCesion":"","reventaA":0,"reventaB":0,"reventaTotal":0,"ganInversor":0,"pctInversor":0,"aniosInversion":0},{"proyecto":"VILELA 3399","unidad":"701","comprador":"PATAGONIA P.","sup":118.5,"supSemi":52,"supDesc":96,"supTotal":266.5,"supPond":162.89999999999998,"fechaBoleto":"2023-09-12","costoTotal":441693.56760621356,"precioA":553000,"precioB":0,"precioVenta":553000,"ganProyecto":111306.43239378644,"pctProyecto":0.2519992151957719,"fechaCesion":"","reventaA":0,"reventaB":0,"reventaTotal":0,"ganInversor":0,"pctInversor":0,"aniosInversion":0}];  // por unidad: costo, venta proyecto, reventa inversor
+let RENTABILIDAD_TOTALES={"VILELA 3399":{"costosA":1300000,"costosB":800000,"totalObra":2100000,"terreno":835000,"plusvaliasDO":125000,"totalProyecto":3060000,"m2Vendibles":1846.2800000000002,"costoM2":1657.3867452390753,"inversoresExt":{"ingresosA":1614618,"ingresosB":383709},"inversoresFYJ":{"ingresosA":1120000,"ingresosB":416291}}};  // por proyecto: {costosA,costosB,totalObra,terreno,plusvaliasDO,totalProyecto,m2Vendibles,costoM2,inversoresExt:{ingresosA,ingresosB},inversoresFYJ:{ingresosA,ingresosB}}
+(function(){
+  try{
+    var u = localStorage.getItem('cf_RENTABILIDAD_UNIDADES');
+    if(u){ var a=JSON.parse(u); if(Array.isArray(a)) RENTABILIDAD_UNIDADES=a; }
+    var t = localStorage.getItem('cf_RENTABILIDAD_TOTALES');
+    if(t){ var o=JSON.parse(t); if(o && typeof o==='object') RENTABILIDAD_TOTALES=o; }
+  }catch(e){}
+})();
+
+let rentFiltroProyecto = '';
+let rentVista = 'proyecto'; // 'proyecto' | 'inversores'
+let rentInversorFiltro = ''; // '' todos, 'FYJ' Francisco y Javier, 'OTROS' resto
+
+function fmtPct(n){ return (n>=0?'+':'')+Math.round(n*1000)/10+'%'; }
+
+function pintarRentFiltros(){
+  document.querySelectorAll('.rent-proy-btn').forEach(b=>{
+    const on = b.dataset.p===rentFiltroProyecto;
+    b.classList.toggle('active', on);
+    b.style.background = on ? (b.style.borderColor||'var(--accent)') : '';
+    b.style.color      = on ? '#0f0f0f' : '';
+    b.style.fontWeight = on ? '700' : '';
+    b.style.boxShadow  = on ? '0 0 10px '+(b.style.borderColor||'var(--accent)') : '';
+  });
+  document.querySelectorAll('.rent-vista-btn').forEach(b=>{
+    const on = b.dataset.v===rentVista;
+    b.classList.toggle('active', on);
+    b.style.background  = on ? 'var(--accent)' : '';
+    b.style.borderColor = on ? 'var(--accent)' : '';
+    b.style.color       = on ? '#0f0f0f' : '';
+    b.style.fontWeight  = on ? '700' : '';
+  });
+}
+function setRentProy(p){
+  rentFiltroProyecto = p;
+  pintarRentFiltros();
+  renderRentabilidad();
+}
+function setRentVista(v){
+  rentVista = v;
+  pintarRentFiltros();
+  renderRentabilidad();
+}
+function setRentInversor(f){
+  rentInversorFiltro = f;
+  renderRentabilidad();
+}
+function esInversorFYJ(u){
+  const c = String(u.comprador||'').toUpperCase();
+  return c.includes('FRANCISCO') && c.includes('JAVIER');
+}
+
+function openModalImportRentabilidad(){
+  document.getElementById('ri-file').value='';
+  document.getElementById('ri-error').style.display='none';
+  if(rentFiltroProyecto) document.getElementById('ri-proyecto').value = rentFiltroProyecto;
+  openModal('modal-rent-import');
+}
+
+function importarRentabilidadExcel(){
+  const proy = document.getElementById('ri-proyecto').value;
+  const fileInput = document.getElementById('ri-file');
+  const errEl = document.getElementById('ri-error');
+  const file = fileInput.files[0];
+  if(!file){ errEl.style.display='block'; errEl.textContent='Seleccioná un archivo Excel.'; return; }
+
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const data = new Uint8Array(e.target.result);
+      const wb = XLSX.read(data, {type:'array'});
+      const ws = wb.Sheets[wb.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(ws, {header:1, defval:null, raw:true});
+
+      // ── Bloque de totales del proyecto: buscar etiquetas por texto ─────────
+      const findVal = (label) => {
+        for(let r=0;r<rows.length;r++){
+          for(let c=0;c<(rows[r]||[]).length;c++){
+            if(String(rows[r][c]||'').trim().toLowerCase() === label.toLowerCase()){
+              return rows[r][c+1];
+            }
+          }
+        }
+        return null;
+      };
+      const totales = {
+        costosA: findVal('COSTOS A')||0,
+        costosB: findVal('COSTOS B')||0,
+        totalObra: findVal('Total Obra')||0,
+        terreno: findVal('Terreno')||0,
+        plusvaliasDO: findVal('Plusvalias + D.O')||0,
+        totalProyecto: findVal('Total Proyecto')||0,
+        m2Vendibles: findVal('M2 VENDIBLES')||0,
+        costoM2: findVal('costo $m2 total:')||0,
+        inversoresExt: { ingresosA: 0, ingresosB: 0 },
+        inversoresFYJ: { ingresosA: 0, ingresosB: 0 },
+      };
+      // Ingresos inversores: buscar dos bloques "INGRESOS A"/"INGRESOS B" (externos primero, FYJ después)
+      let ingresosEncontrados = [];
+      for(let r=0;r<rows.length;r++){
+        for(let c=0;c<(rows[r]||[]).length;c++){
+          const cell = String(rows[r][c]||'').trim().toUpperCase();
+          if(cell==='INGRESOS A' || cell==='INGRESOS B'){
+            ingresosEncontrados.push({tipo:cell, val: rows[r][c+1]||0, row:r});
+          }
+        }
+      }
+      // Agrupar por bloque consecutivo (A seguido de B = un bloque de inversor)
+      const bloques = [];
+      for(let i=0;i<ingresosEncontrados.length;i++){
+        if(ingresosEncontrados[i].tipo==='INGRESOS A'){
+          const b = ingresosEncontrados[i+1];
+          bloques.push({ a: ingresosEncontrados[i].val, b: (b&&b.tipo==='INGRESOS B')?b.val:0 });
+        }
+      }
+      if(bloques[0]) totales.inversoresExt = {ingresosA: bloques[0].a, ingresosB: bloques[0].b};
+      if(bloques[1]) totales.inversoresFYJ = {ingresosA: bloques[1].a, ingresosB: bloques[1].b};
+
+      // ── Tabla de unidades: buscar fila de encabezado con "Deptos" ──────────
+      let headerRow = -1, headerCols = {};
+      for(let r=0;r<rows.length;r++){
+        const idx = (rows[r]||[]).findIndex(v=>String(v||'').trim()==='Deptos');
+        if(idx>=0){ headerRow = r; break; }
+      }
+      if(headerRow<0) throw new Error('No se encontró la tabla de unidades (fila con "Deptos").');
+
+      const hdrs = rows[headerRow];
+      const colMap = {};
+      hdrs.forEach((h,i)=>{ if(h) colMap[String(h).trim()] = i; });
+
+      const need = (name) => colMap[name] !== undefined ? colMap[name] : -1;
+      const iUnidad = need('Deptos'), iSup=need('Superficie'), iSupSemi=need('Sup. Semi cub'),
+            iSupDesc=need('Sup. Desc'), iComprador=need('COMPRADOR'), iSupTotal=need('Sup. total real'),
+            iSupPond=need('Sup. Ponderada'), iFechaBoleto=need('Fecha de Boleto'), iCosto=need('Costo total'),
+            iPrecioA=need('Precio A'), iPrecioB=need('Precio B'), iPrecioVenta=need('Precio Venta (Proyecto)'),
+            iGanProy=need('Gan $ Proyecto (Costo - P. Venta)'), iPctProy=need('%RR (P.Venta / Costo)'),
+            iFechaCesion=need('Fecha Cesion'), iRevA=need('Precio Reventa A (Inversor)'),
+            iRevB=need('Precio Reventa B (Inversor)'), iRevTotal=need('Precio Reventa Total (Inversor)'),
+            iGanInv=need('Gan $ Inversor (P.Compra - P.Venta)'), iPctInv=need('% (P.Venta / P.Compra)'),
+            iAnios=need('% Tiempo de inversion (Años)');
+
+      const excelDateToISO = (v) => {
+        if(v==null || v==='') return '';
+        if(v instanceof Date) return v.toISOString().slice(0,10);
+        if(typeof v === 'number') return new Date(Math.round((v-25569)*86400*1000)).toISOString().slice(0,10);
+        return String(v);
+      };
+
+      const unidades = [];
+      for(let r=headerRow+1; r<rows.length; r++){
+        const row = rows[r];
+        if(!row || row[iUnidad]==null || row[iUnidad]==='') continue;
+        unidades.push({
+          proyecto: proy,
+          unidad: String(row[iUnidad]),
+          comprador: iComprador>=0 ? (row[iComprador]||'') : '',
+          sup: iSup>=0 ? (row[iSup]||0) : 0,
+          supSemi: iSupSemi>=0 ? (row[iSupSemi]||0) : 0,
+          supDesc: iSupDesc>=0 ? (row[iSupDesc]||0) : 0,
+          supTotal: iSupTotal>=0 ? (row[iSupTotal]||0) : 0,
+          supPond: iSupPond>=0 ? (row[iSupPond]||0) : 0,
+          fechaBoleto: iFechaBoleto>=0 ? excelDateToISO(row[iFechaBoleto]) : '',
+          costoTotal: iCosto>=0 ? (row[iCosto]||0) : 0,
+          precioA: iPrecioA>=0 ? (row[iPrecioA]||0) : 0,
+          precioB: iPrecioB>=0 ? (row[iPrecioB]||0) : 0,
+          precioVenta: iPrecioVenta>=0 ? (row[iPrecioVenta]||0) : 0,
+          ganProyecto: iGanProy>=0 ? (row[iGanProy]||0) : 0,
+          pctProyecto: iPctProy>=0 ? (row[iPctProy]||0) : 0,
+          fechaCesion: iFechaCesion>=0 ? excelDateToISO(row[iFechaCesion]) : '',
+          reventaA: iRevA>=0 ? (row[iRevA]||0) : 0,
+          reventaB: iRevB>=0 ? (row[iRevB]||0) : 0,
+          reventaTotal: iRevTotal>=0 ? (row[iRevTotal]||0) : 0,
+          ganInversor: iGanInv>=0 ? (row[iGanInv]||0) : 0,
+          pctInversor: iPctInv>=0 ? (row[iPctInv]||0) : 0,
+          aniosInversion: iAnios>=0 ? (row[iAnios]||0) : 0,
+        });
+      }
+
+      if(!unidades.length) throw new Error('No se encontraron filas de unidades para importar.');
+
+      // Reemplazar datos previos del proyecto
+      RENTABILIDAD_UNIDADES = RENTABILIDAD_UNIDADES.filter(u=>u.proyecto!==proy);
+      RENTABILIDAD_UNIDADES = RENTABILIDAD_UNIDADES.concat(unidades);
+      RENTABILIDAD_TOTALES[proy] = totales;
+      save('RENTABILIDAD_UNIDADES', RENTABILIDAD_UNIDADES);
+      save('RENTABILIDAD_TOTALES', RENTABILIDAD_TOTALES);
+
+      closeModal('modal-rent-import');
+      rentFiltroProyecto = proy;
+      pintarRentFiltros();
+      renderRentabilidad();
+    } catch(err){
+      errEl.style.display='block';
+      errEl.textContent = 'Error al leer el archivo: '+err.message;
+    }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function renderRentabilidad(){
+  const el = document.getElementById('rentabilidad-content');
+  if(!el) return;
+
+  const unidades = rentFiltroProyecto
+    ? RENTABILIDAD_UNIDADES.filter(u=>u.proyecto===rentFiltroProyecto)
+    : RENTABILIDAD_UNIDADES;
+
+  const importBtn = `<div style="margin-bottom:16px"><button class="btn btn-accent" onclick="openModalImportRentabilidad()">📥 Importar rentabilidad (Excel)</button></div>`;
+
+  if(!unidades.length){
+    el.innerHTML = importBtn + `<div class="empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-4 4"/></svg><p>No hay datos de rentabilidad${rentFiltroProyecto?' para '+rentFiltroProyecto:''}.<br>Importá el Excel con el botón superior.</p></div>`;
+    return;
+  }
+
+  if(rentVista === 'proyecto'){
+    el.innerHTML = importBtn + renderRentProyecto(unidades);
+  } else {
+    el.innerHTML = importBtn + renderRentInversores(unidades);
+  }
+}
+
+function renderRentProyecto(unidades){
+  const totCosto = unidades.reduce((s,u)=>s+(u.costoTotal||0),0);
+  const totVenta = unidades.reduce((s,u)=>s+(u.precioVenta||0),0);
+  const totGan   = totVenta - totCosto;
+  const pctProm  = totCosto>0 ? totGan/totCosto : 0;
+
+  // Totales del proyecto si hay uno solo filtrado
+  let bloqueTotales = '';
+  if(rentFiltroProyecto && RENTABILIDAD_TOTALES[rentFiltroProyecto]){
+    const T = RENTABILIDAD_TOTALES[rentFiltroProyecto];
+    bloqueTotales = `
+      <div class="form-section" style="margin-bottom:20px">
+        <div class="form-section-title" style="font-size:12px;margin-bottom:10px">Estructura de costos — ${rentFiltroProyecto}</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;font-size:12px">
+          <div>Costos A: <strong style="font-family:var(--mono)">${fmtUSD(T.costosA)}</strong></div>
+          <div>Costos B: <strong style="font-family:var(--mono)">${fmtUSD(T.costosB)}</strong></div>
+          <div>Total obra: <strong style="font-family:var(--mono)">${fmtUSD(T.totalObra)}</strong></div>
+          <div>Terreno: <strong style="font-family:var(--mono)">${fmtUSD(T.terreno)}</strong></div>
+          <div>Plusvalías + D.O: <strong style="font-family:var(--mono)">${fmtUSD(T.plusvaliasDO)}</strong></div>
+          <div>Total proyecto: <strong style="font-family:var(--mono);color:var(--accent)">${fmtUSD(T.totalProyecto)}</strong></div>
+          <div>M² vendibles: <strong style="font-family:var(--mono)">${fmtN(T.m2Vendibles)} m²</strong></div>
+          <div>Costo $/m²: <strong style="font-family:var(--mono)">${fmtUSD(T.costoM2)}</strong></div>
+        </div>
+      </div>`;
+  }
+
+  const kpis = `<div class="metrics-row" style="margin-bottom:20px">
+    <div class="metric-card">
+      <div class="metric-label">Costo total unidades</div>
+      <div class="metric-val red">${fmtUSD(totCosto)}</div>
+      <div class="metric-sub">${unidades.length} unidades</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Precio de venta total</div>
+      <div class="metric-val green">${fmtUSD(totVenta)}</div>
+      <div class="metric-sub">Precio A + B</div>
+    </div>
+    <div class="metric-card" style="border-color:${totGan>=0?'rgba(96,180,240,0.3)':'rgba(240,96,96,0.3)'}">
+      <div class="metric-label">Ganancia del proyecto</div>
+      <div class="metric-val ${totGan>=0?'accent':'red'}">${fmtUSD(totGan)}</div>
+      <div class="metric-sub">${fmtPct(pctProm)} sobre costo</div>
+    </div>
+  </div>`;
+
+  const rows = unidades.slice().sort((a,b)=>(a.proyecto+a.unidad).localeCompare(b.proyecto+b.unidad)).map(u=>{
+    const col = PROY_COLORS[u.proyecto]||'#60d098';
+    return `<tr>
+      ${!rentFiltroProyecto?`<td style="text-align:left"><span class="tag" style="background:${col}22;color:${col};font-size:10px">${u.proyecto}</span></td>`:''}
+      <td style="text-align:left;font-weight:500">${u.unidad}</td>
+      <td style="text-align:left;font-size:11px">${u.comprador||'—'}</td>
+      <td style="text-align:right;font-size:11px">${u.supPond?fmtN(u.supPond)+' m²':'—'}</td>
+      <td style="text-align:right;font-family:var(--mono);color:var(--red)">${fmtUSD(u.costoTotal)}</td>
+      <td style="text-align:right;font-family:var(--mono);color:var(--green)">${fmtUSD(u.precioVenta)}</td>
+      <td style="text-align:right;font-family:var(--mono);font-weight:600;color:${u.ganProyecto>=0?'var(--accent)':'var(--red)'}">${fmtUSD(u.ganProyecto)}</td>
+      <td style="text-align:right;font-family:var(--mono);color:${u.pctProyecto>=0?'var(--accent)':'var(--red)'}">${fmtPct(u.pctProyecto)}</td>
+    </tr>`;
+  }).join('');
+
+  return bloqueTotales + kpis + `
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          ${!rentFiltroProyecto?'<th style="text-align:left">Proyecto</th>':''}
+          <th style="text-align:left">Unidad</th>
+          <th style="text-align:left">Comprador</th>
+          <th style="text-align:right">Sup. pond.</th>
+          <th style="text-align:right">Costo</th>
+          <th style="text-align:right">Precio venta (A+B)</th>
+          <th style="text-align:right">Ganancia $</th>
+          <th style="text-align:right">% RR</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+}
+
+function renderRentInversores(unidades){
+  const conReventaAll = unidades.filter(u=>u.fechaCesion);
+
+  if(!conReventaAll.length){
+    return `<div class="empty"><p>No hay operaciones de reventa de inversores${rentFiltroProyecto?' para '+rentFiltroProyecto:''} en los datos importados.</p></div>`;
+  }
+
+  const nFYJ   = conReventaAll.filter(esInversorFYJ).length;
+  const nOtros = conReventaAll.length - nFYJ;
+
+  const invBtn = (val,lbl,count,col) => {
+    const on = rentInversorFiltro===val;
+    return `<button onclick="setRentInversor('${val}')" style="padding:5px 12px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:2px solid ${on?col:'#444'};background:${on?col:'transparent'};color:${on?'#0f0f0f':col};box-shadow:${on?'0 0 10px '+col+'55':'none'};transition:all .15s">${lbl} (${count})</button>`;
+  };
+  const filtroInvUI = `<div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+    <span style="font-size:12px;color:var(--muted);font-weight:500">Inversor:</span>
+    ${invBtn('','Todos',conReventaAll.length,'#c8f060')}
+    ${invBtn('FYJ','Francisco y Javier',nFYJ,'#60b4f0')}
+    ${invBtn('OTROS','Otros inversores',nOtros,'#f0a060')}
+  </div>`;
+
+  const conReventa = rentInversorFiltro==='FYJ'   ? conReventaAll.filter(esInversorFYJ)
+                   : rentInversorFiltro==='OTROS' ? conReventaAll.filter(u=>!esInversorFYJ(u))
+                   : conReventaAll;
+
+  if(!conReventa.length){
+    return filtroInvUI + `<div class="empty"><p>No hay reventas para el filtro seleccionado.</p></div>`;
+  }
+
+  // Bloque contextual: ingresos del grupo según totales importados (solo con proyecto único)
+  let bloqueIngresos = '';
+  if(rentFiltroProyecto && RENTABILIDAD_TOTALES[rentFiltroProyecto]){
+    const T = RENTABILIDAD_TOTALES[rentFiltroProyecto];
+    const grupo = rentInversorFiltro==='FYJ' ? T.inversoresFYJ : rentInversorFiltro==='OTROS' ? T.inversoresExt : null;
+    const grupoNombre = rentInversorFiltro==='FYJ' ? 'Inversores FYJ (Francisco y Javier)' : 'Inversores externos';
+    if(grupo && (grupo.ingresosA || grupo.ingresosB)){
+      bloqueIngresos = `<div class="form-section" style="margin-bottom:20px">
+        <div class="form-section-title" style="font-size:12px;margin-bottom:10px">${grupoNombre} — ingresos aportados al proyecto</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;font-size:12px">
+          <div>Ingresos A: <strong style="font-family:var(--mono)">${fmtUSD(grupo.ingresosA||0)}</strong></div>
+          <div>Ingresos B: <strong style="font-family:var(--mono)">${fmtUSD(grupo.ingresosB||0)}</strong></div>
+          <div>Total: <strong style="font-family:var(--mono);color:var(--accent)">${fmtUSD((grupo.ingresosA||0)+(grupo.ingresosB||0))}</strong></div>
+        </div>
+      </div>`;
+    }
+  }
+
+  const totCompra  = conReventa.reduce((s,u)=>s+(u.precioVenta||0),0);
+  const totReventa = conReventa.reduce((s,u)=>s+(u.reventaTotal||0),0);
+  const totGan     = totReventa - totCompra;
+  const pctProm    = totCompra>0 ? totGan/totCompra : 0;
+  const aniosProm  = conReventa.reduce((s,u)=>s+(u.aniosInversion||0),0) / conReventa.length;
+
+  const kpis = `<div class="metrics-row" style="margin-bottom:20px">
+    <div class="metric-card">
+      <div class="metric-label">Precio de compra total</div>
+      <div class="metric-val red">${fmtUSD(totCompra)}</div>
+      <div class="metric-sub">${conReventa.length} unidades revendidas</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Precio de reventa total</div>
+      <div class="metric-val green">${fmtUSD(totReventa)}</div>
+      <div class="metric-sub">Reventa A + B</div>
+    </div>
+    <div class="metric-card" style="border-color:${totGan>=0?'rgba(96,180,240,0.3)':'rgba(240,96,96,0.3)'}">
+      <div class="metric-label">Ganancia de inversores</div>
+      <div class="metric-val ${totGan>=0?'accent':'red'}">${fmtUSD(totGan)}</div>
+      <div class="metric-sub">${fmtPct(pctProm)} · ${aniosProm.toFixed(1)} años promedio</div>
+    </div>
+  </div>`;
+
+  const rows = conReventa.slice().sort((a,b)=>(b.fechaCesion||'').localeCompare(a.fechaCesion||'')).map(u=>{
+    const col = PROY_COLORS[u.proyecto]||'#60d098';
+    return `<tr>
+      ${!rentFiltroProyecto?`<td style="text-align:left"><span class="tag" style="background:${col}22;color:${col};font-size:10px">${u.proyecto}</span></td>`:''}
+      <td style="text-align:left;font-weight:500">${u.unidad}</td>
+      <td style="text-align:left;font-size:11px">${u.comprador||'—'}</td>
+      <td style="text-align:left;font-size:11px">${u.fechaCesion?ym2label(u.fechaCesion.slice(0,7)):'—'}</td>
+      <td style="text-align:right;font-family:var(--mono);color:var(--red)">${fmtUSD(u.precioVenta)}</td>
+      <td style="text-align:right;font-family:var(--mono);color:var(--green)">${fmtUSD(u.reventaTotal)}</td>
+      <td style="text-align:right;font-family:var(--mono);font-weight:600;color:${u.ganInversor>=0?'var(--accent)':'var(--red)'}">${fmtUSD(u.ganInversor)}</td>
+      <td style="text-align:right;font-family:var(--mono);color:${u.pctInversor>=0?'var(--accent)':'var(--red)'}">${fmtPct(u.pctInversor)}</td>
+      <td style="text-align:right;font-size:11px">${u.aniosInversion?u.aniosInversion.toFixed(1)+' años':'—'}</td>
+    </tr>`;
+  }).join('');
+
+  return filtroInvUI + bloqueIngresos + kpis + `
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr>
+          ${!rentFiltroProyecto?'<th style="text-align:left">Proyecto</th>':''}
+          <th style="text-align:left">Unidad</th>
+          <th style="text-align:left">Comprador orig.</th>
+          <th style="text-align:left">Fecha cesión</th>
+          <th style="text-align:right">Precio compra</th>
+          <th style="text-align:right">Precio reventa</th>
+          <th style="text-align:right">Ganancia $</th>
+          <th style="text-align:right">%</th>
+          <th style="text-align:right">Tiempo inv.</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
     </div>`;
 }
 
